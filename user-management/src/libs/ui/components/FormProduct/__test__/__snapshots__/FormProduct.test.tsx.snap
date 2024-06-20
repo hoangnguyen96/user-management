@@ -1,0 +1,659 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormProduct component Should render snapshot correctly 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+      >
+        <div
+          class="MuiStack-root css-1l4xmop-MuiStack-root"
+        >
+          <div
+            class="MuiStack-root css-1lv7di1-MuiStack-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+            >
+              Name:
+            </label>
+            <div
+              class="MuiStack-root css-aubdti-MuiStack-root"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                data-testid="name-product"
+              >
+                <div
+                  class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r0:"
+                    name="name"
+                    placeholder="name"
+                    type="text"
+                    value="kim"
+                  />
+                  <fieldset
+                    aria-hidden="true"
+                    class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      class="css-ihdtdm"
+                    >
+                      <span
+                        class="notranslate"
+                      >
+                        ​
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiStack-root css-1lv7di1-MuiStack-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+            >
+              Quantity:
+            </label>
+            <div
+              class="MuiStack-root css-aubdti-MuiStack-root"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                data-testid="quantity-product"
+              >
+                <div
+                  class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r1:"
+                    inputmode="numeric"
+                    name="quantity"
+                    placeholder="1000"
+                    type="text"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden="true"
+                    class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      class="css-ihdtdm"
+                    >
+                      <span
+                        class="notranslate"
+                      >
+                        ​
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+          data-testid="button-product"
+          tabindex="0"
+          type="button"
+        >
+          Update
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+    >
+      <div
+        class="MuiStack-root css-1l4xmop-MuiStack-root"
+      >
+        <div
+          class="MuiStack-root css-1lv7di1-MuiStack-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+          >
+            Name:
+          </label>
+          <div
+            class="MuiStack-root css-aubdti-MuiStack-root"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              data-testid="name-product"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r0:"
+                  name="name"
+                  placeholder="name"
+                  type="text"
+                  value="kim"
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiStack-root css-1lv7di1-MuiStack-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+          >
+            Quantity:
+          </label>
+          <div
+            class="MuiStack-root css-aubdti-MuiStack-root"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              data-testid="quantity-product"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r1:"
+                  inputmode="numeric"
+                  name="quantity"
+                  placeholder="1000"
+                  type="text"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+        data-testid="button-product"
+        tabindex="0"
+        type="button"
+      >
+        Update
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`FormProduct component Should render snapshot correctly when isAdmin is true 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+      >
+        <div
+          class="MuiStack-root css-1l4xmop-MuiStack-root"
+        >
+          <div
+            class="MuiStack-root css-1lv7di1-MuiStack-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+            >
+              Name:
+            </label>
+            <div
+              class="MuiStack-root css-aubdti-MuiStack-root"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                data-testid="name-product"
+              >
+                <div
+                  class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r2:"
+                    name="name"
+                    placeholder="name"
+                    type="text"
+                    value="kim"
+                  />
+                  <fieldset
+                    aria-hidden="true"
+                    class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      class="css-ihdtdm"
+                    >
+                      <span
+                        class="notranslate"
+                      >
+                        ​
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiStack-root css-1lv7di1-MuiStack-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+            >
+              Price:
+            </label>
+            <div
+              class="MuiStack-root css-aubdti-MuiStack-root"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                data-testid="price-product"
+              >
+                <div
+                  class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r3:"
+                    inputmode="numeric"
+                    name="price"
+                    placeholder="100"
+                    type="text"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden="true"
+                    class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      class="css-ihdtdm"
+                    >
+                      <span
+                        class="notranslate"
+                      >
+                        ​
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiStack-root css-1lv7di1-MuiStack-root"
+          >
+            <label
+              class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+            >
+              Quantity:
+            </label>
+            <div
+              class="MuiStack-root css-aubdti-MuiStack-root"
+            >
+              <div
+                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                data-testid="quantity-product"
+              >
+                <div
+                  class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+                >
+                  <input
+                    aria-invalid="false"
+                    class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                    id=":r4:"
+                    inputmode="numeric"
+                    name="quantity"
+                    placeholder="1000"
+                    type="text"
+                    value=""
+                  />
+                  <fieldset
+                    aria-hidden="true"
+                    class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                  >
+                    <legend
+                      class="css-ihdtdm"
+                    >
+                      <span
+                        class="notranslate"
+                      >
+                        ​
+                      </span>
+                    </legend>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+          data-testid="button-product"
+          tabindex="0"
+          type="button"
+        >
+          Update
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+    >
+      <div
+        class="MuiStack-root css-1l4xmop-MuiStack-root"
+      >
+        <div
+          class="MuiStack-root css-1lv7di1-MuiStack-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+          >
+            Name:
+          </label>
+          <div
+            class="MuiStack-root css-aubdti-MuiStack-root"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              data-testid="name-product"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r2:"
+                  name="name"
+                  placeholder="name"
+                  type="text"
+                  value="kim"
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiStack-root css-1lv7di1-MuiStack-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+          >
+            Price:
+          </label>
+          <div
+            class="MuiStack-root css-aubdti-MuiStack-root"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              data-testid="price-product"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r3:"
+                  inputmode="numeric"
+                  name="price"
+                  placeholder="100"
+                  type="text"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="MuiStack-root css-1lv7di1-MuiStack-root"
+        >
+          <label
+            class="MuiFormLabel-root MuiFormLabel-colorPrimary css-1j5jes1-MuiFormLabel-root"
+          >
+            Quantity:
+          </label>
+          <div
+            class="MuiStack-root css-aubdti-MuiStack-root"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              data-testid="quantity-product"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  id=":r4:"
+                  inputmode="numeric"
+                  name="quantity"
+                  placeholder="1000"
+                  type="text"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+        data-testid="button-product"
+        tabindex="0"
+        type="button"
+      >
+        Update
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

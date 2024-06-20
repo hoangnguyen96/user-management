@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "es2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./",
+    "paths": {
+      "@app/pages": ["src/libs/pages/index.ts"],
+      "@app/api": ["src/libs/api/index.ts"],
+      "@app/constants": ["src/libs/constants/index.ts"],
+      "@app/hooks": ["src/libs/hooks/index.ts"],
+      "@app/models": ["src/libs/models/index.ts"],
+      "@app/stores": ["src/libs/stores/index.ts"],
+      "@app/ui/*": ["src/libs/ui/*"],
+      "@app/utils": ["src/libs/utils/index.ts"],
+      "@app/services": ["src/libs/services/index.ts"],
+    }
+  },
+  "include": ["src", "./jest.setup.ts"],
+  "exclude": ["node_modules", "dist"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

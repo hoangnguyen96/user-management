@@ -15,23 +15,16 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof Input>;
 
-export const Normal: Story = {
+export const Default: Story = {
   args: {
     placeholder: "Input...",
-    variant: "normal",
-  },
-};
-
-export const Warning: Story = {
-  args: {
-    placeholder: "Input...",
-    variant: "warning",
+    variant: "outlined",
   },
 };
 
 export const Error: Story = {
   args: {
     placeholder: "Input...",
-    variant: "error",
+    isInvalid: true,
   },
 };

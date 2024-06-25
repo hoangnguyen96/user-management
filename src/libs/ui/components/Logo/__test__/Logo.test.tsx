@@ -8,7 +8,7 @@ import * as stores from "@app/stores";
 import Logo from "..";
 
 // Mock the logo import
-jest.mock("/src/assets/images/user-manage.svg", () => "logo.svg");
+jest.mock("/images/user-manage.svg", () => "logo.svg");
 
 jest.mock("@app/stores", () => ({
   useAuthStore: jest.fn(),

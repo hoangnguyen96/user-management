@@ -11,24 +11,23 @@ import {
 // Models
 import { ApiResponse, LoginCredentials, UserResponse } from "@app/models";
 
+// Utils
+import { findUser } from "../utils/feature";
+
 const baseApi = process.env.VITE_APP_BASE_API || "";
-const endpoint = ENDPOINTS.USER;
 
 // Login with password
 export const useAuthLogin = () => {
   const { error, ...rest } = useMutation<UserResponse, Error, LoginCredentials>(
     {
       mutationFn: async ({ username, password }: LoginCredentials) => {
-        const response = await fetch(`${baseApi}/${endpoint}`, {
+        const response = await fetch(`${baseApi}/${ENDPOINTS.USER}`, {
           method: METHOD.GET,
           headers: { "content-type": "application/json" },
         });
 
         const data = await response.json();
-        const user = data.find(
-          (user: { username: string; password: string }) =>
-            user.username === username && user.password === password
-        );
+        const user = findUser(data, username, password);
 
         if (response.ok) {
           return user;
@@ -45,12 +44,11 @@ export const useAuthLogin = () => {
   };
 };
 
-export const useAuthLogout = () => {
+export const useAuthLogout = (callback: () => void) => {
   const { error, ...rest } = useMutation<ApiResponse, Error>({
     mutationKey: MUTATION_KEY.LOGOUT,
     mutationFn: async () => {
-      // Clear local storage or any other storage
-      await localStorage.removeItem("auth");
+      await callback();
 
       return {
         message: "Logged out successfully",

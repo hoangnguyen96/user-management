@@ -13,6 +13,7 @@ export const themeDefault = createTheme({
       styleOverrides: {
         root: {
           textTransform: "capitalize",
+          paddingTop: "8px",
         },
       },
       variants: [
@@ -62,6 +63,33 @@ export const themeDefault = createTheme({
     },
 
     MuiTextField: {
+      variants: [
+        {
+          props: { variant: "outlined" },
+          style: {
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "gray",
+              },
+              "&:hover fieldset": {
+                borderColor: "darkgray",
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "gray",
+              },
+            },
+            "& .MuiInputLabel-root": {
+              color: "gray",
+            },
+            "& .MuiInputLabel-root.Mui-focused": {
+              color: "gray",
+            },
+            "& .MuiFormHelperText-root": {
+              color: "gray",
+            },
+          },
+        },
+      ],
       styleOverrides: {
         root: ({ theme }) => ({
           "& .MuiOutlinedInput-root": {
@@ -82,6 +110,25 @@ export const themeDefault = createTheme({
             },
           },
         }),
+      },
+      defaultProps: {
+        variant: "outlined",
+      },
+    },
+
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          padding: "8px 8px 8px 40px",
+          fontSize: "14px",
+          borderRadius: "12px",
+          "::after": {
+            display: "none",
+          },
+          "::before": {
+            display: "none",
+          },
+        },
       },
     },
 

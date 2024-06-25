@@ -41,7 +41,7 @@ exports[`ItemCustomer component Should render snapshot correctly 1`] = `
             Newzilen
           </span>
           <button
-            class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1pyiguu-MuiButtonBase-root-MuiButton-root"
+            class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1f3a2p5-MuiButtonBase-root-MuiButton-root"
             data-testid="button-toggle"
             tabindex="0"
             type="button"
@@ -177,7 +177,7 @@ exports[`ItemCustomer component Should render snapshot correctly 1`] = `
           Newzilen
         </span>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1pyiguu-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1f3a2p5-MuiButtonBase-root-MuiButton-root"
           data-testid="button-toggle"
           tabindex="0"
           type="button"

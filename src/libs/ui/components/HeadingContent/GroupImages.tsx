@@ -1,25 +1,24 @@
-import { avatar1, avatar2, avatar3, avatar4, avatar5 } from "@app/ui/images";
 import { Avatar, Stack } from "@mui/material";
 
 const imgData = [
   {
-    img: avatar1,
+    img: "/src/libs/ui/images/avatar1.png",
     title: "Breakfast",
   },
   {
-    img: avatar2,
+    img: "/src/libs/ui/images/avatar2.png",
     title: "Burger",
   },
   {
-    img: avatar3,
+    img: "/src/libs/ui/images/avatar3.png",
     title: "Camera",
   },
   {
-    img: avatar4,
+    img: "/src/libs/ui/images/avatar4.png",
     title: "Coffee",
   },
   {
-    img: avatar5,
+    img: "/src/libs/ui/images/avatar5.png",
     title: "Hats",
   },
 ];

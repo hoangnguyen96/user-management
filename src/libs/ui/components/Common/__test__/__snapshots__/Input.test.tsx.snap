@@ -9,7 +9,7 @@ exports[`Input component Should render snapshot correctly 1`] = `
         class="MuiStack-root css-aubdti-MuiStack-root"
       >
         <div
-          class="MuiFormControl-root MuiTextField-root css-vi1639-MuiFormControl-root-MuiTextField-root"
+          class="MuiFormControl-root MuiTextField-root css-1fpxxrg-MuiFormControl-root-MuiTextField-root"
         >
           <div
             class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
@@ -46,7 +46,7 @@ exports[`Input component Should render snapshot correctly 1`] = `
       class="MuiStack-root css-aubdti-MuiStack-root"
     >
       <div
-        class="MuiFormControl-root MuiTextField-root css-vi1639-MuiFormControl-root-MuiTextField-root"
+        class="MuiFormControl-root MuiTextField-root css-1fpxxrg-MuiFormControl-root-MuiTextField-root"
       >
         <div
           class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"

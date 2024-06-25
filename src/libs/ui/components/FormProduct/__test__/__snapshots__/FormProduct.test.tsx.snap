@@ -23,7 +23,7 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
               class="MuiStack-root css-aubdti-MuiStack-root"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                 data-testid="name-product"
               >
                 <div
@@ -68,7 +68,7 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
               class="MuiStack-root css-aubdti-MuiStack-root"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                 data-testid="quantity-product"
               >
                 <div
@@ -104,12 +104,15 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
           data-testid="button-product"
           tabindex="0"
           type="button"
         >
           Update
+          <div
+            class="MuiBox-root css-7u9dva"
+          />
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
@@ -136,7 +139,7 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
             class="MuiStack-root css-aubdti-MuiStack-root"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
               data-testid="name-product"
             >
               <div
@@ -181,7 +184,7 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
             class="MuiStack-root css-aubdti-MuiStack-root"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
               data-testid="quantity-product"
             >
               <div
@@ -217,12 +220,15 @@ exports[`FormProduct component Should render snapshot correctly 1`] = `
         </div>
       </div>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
         data-testid="button-product"
         tabindex="0"
         type="button"
       >
         Update
+        <div
+          class="MuiBox-root css-7u9dva"
+        />
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />
@@ -306,7 +312,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
               class="MuiStack-root css-aubdti-MuiStack-root"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                 data-testid="name-product"
               >
                 <div
@@ -351,7 +357,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
               class="MuiStack-root css-aubdti-MuiStack-root"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                 data-testid="price-product"
               >
                 <div
@@ -397,7 +403,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
               class="MuiStack-root css-aubdti-MuiStack-root"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                 data-testid="quantity-product"
               >
                 <div
@@ -433,12 +439,15 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
           </div>
         </div>
         <button
-          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
           data-testid="button-product"
           tabindex="0"
           type="button"
         >
           Update
+          <div
+            class="MuiBox-root css-7u9dva"
+          />
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
           />
@@ -465,7 +474,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
             class="MuiStack-root css-aubdti-MuiStack-root"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
               data-testid="name-product"
             >
               <div
@@ -510,7 +519,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
             class="MuiStack-root css-aubdti-MuiStack-root"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
               data-testid="price-product"
             >
               <div
@@ -556,7 +565,7 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
             class="MuiStack-root css-aubdti-MuiStack-root"
           >
             <div
-              class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+              class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
               data-testid="quantity-product"
             >
               <div
@@ -592,12 +601,15 @@ exports[`FormProduct component Should render snapshot correctly when isAdmin is 
         </div>
       </div>
       <button
-        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+        class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
         data-testid="button-product"
         tabindex="0"
         type="button"
       >
         Update
+        <div
+          class="MuiBox-root css-7u9dva"
+        />
         <span
           class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
         />

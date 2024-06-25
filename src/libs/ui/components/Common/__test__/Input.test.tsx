@@ -5,8 +5,6 @@ import { Input } from "../Input";
 
 describe("Input component", () => {
   it("Should render snapshot correctly", () => {
-    expect(
-      render(<Input placeholder="Input..." variant="normal" />)
-    ).toMatchSnapshot();
+    expect(render(<Input placeholder="Input..." />)).toMatchSnapshot();
   });
 });

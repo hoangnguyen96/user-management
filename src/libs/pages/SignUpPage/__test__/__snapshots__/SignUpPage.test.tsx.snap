@@ -37,7 +37,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                     data-testid="full-name"
                   >
                     <div
@@ -82,7 +82,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                     data-testid="company-customer"
                   >
                     <div
@@ -127,7 +127,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                     data-testid="phone-number"
                   >
                     <div
@@ -173,7 +173,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                     data-testid="email"
                   >
                     <div
@@ -218,7 +218,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                     data-testid="country-customer"
                   >
                     <div
@@ -256,7 +256,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
               class="MuiStack-root css-13aomr-MuiStack-root"
             >
               <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-14yowmr-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1uu91vc-MuiButtonBase-root-MuiButton-root"
                 tabindex="0"
                 type="button"
               >
@@ -266,12 +266,15 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 />
               </button>
               <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
                 data-testid="button-sign-up"
                 tabindex="0"
                 type="button"
               >
                 Sign up
+                <div
+                  class="MuiBox-root css-7u9dva"
+                />
                 <span
                   class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
                 />
@@ -315,7 +318,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                   data-testid="full-name"
                 >
                   <div
@@ -360,7 +363,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                   data-testid="company-customer"
                 >
                   <div
@@ -405,7 +408,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                   data-testid="phone-number"
                 >
                   <div
@@ -451,7 +454,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                   data-testid="email"
                 >
                   <div
@@ -496,7 +499,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1ygir89-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
                   data-testid="country-customer"
                 >
                   <div
@@ -534,7 +537,7 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
             class="MuiStack-root css-13aomr-MuiStack-root"
           >
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-14yowmr-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1uu91vc-MuiButtonBase-root-MuiButton-root"
               tabindex="0"
               type="button"
             >
@@ -544,12 +547,15 @@ exports[`SignUpPage component Should render snapshot correctly 1`] = `
               />
             </button>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-6zu1nu-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary css-1bhl3b2-MuiButtonBase-root-MuiButton-root"
               data-testid="button-sign-up"
               tabindex="0"
               type="button"
             >
               Sign up
+              <div
+                class="MuiBox-root css-7u9dva"
+              />
               <span
                 class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
               />

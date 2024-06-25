@@ -14,3 +14,6 @@ export enum METHOD {
 }
 
 export const OPTIONS = ["Edit", "Delete"];
+
+export const STALE_TIME_API = 1000 * 60 * 5;
+export const DELAY_TIME_API = 2;

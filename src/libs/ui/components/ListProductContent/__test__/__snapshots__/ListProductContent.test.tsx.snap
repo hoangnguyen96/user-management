@@ -58,11 +58,11 @@ exports[`ListProductContent component Should render snapshot correctly 1`] = `
                 </svg>
               </div>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-sfs0yr-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-94omkc-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="search"
-                  class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
                   placeholder="Search…"
                   type="text"
                   value=""
@@ -303,11 +303,11 @@ exports[`ListProductContent component Should render snapshot correctly 1`] = `
               </svg>
             </div>
             <div
-              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-sfs0yr-MuiInputBase-root-MuiInput-root"
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-94omkc-MuiInputBase-root-MuiInput-root"
             >
               <input
                 aria-label="search"
-                class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
                 placeholder="Search…"
                 type="text"
                 value=""

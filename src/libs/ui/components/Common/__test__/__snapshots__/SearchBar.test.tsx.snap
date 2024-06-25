@@ -35,7 +35,7 @@ exports[`SearchBar component Should render snapshot correctly 1`] = `
           </svg>
         </div>
         <div
-          class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-ht87nn-MuiInputBase-root-MuiInput-root"
+          class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-1ohsiea-MuiInputBase-root-MuiInput-root"
         >
           <input
             aria-label="search"
@@ -79,7 +79,7 @@ exports[`SearchBar component Should render snapshot correctly 1`] = `
         </svg>
       </div>
       <div
-        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-ht87nn-MuiInputBase-root-MuiInput-root"
+        class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-1ohsiea-MuiInputBase-root-MuiInput-root"
       >
         <input
           aria-label="search"

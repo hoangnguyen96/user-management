@@ -1,5 +1,6 @@
 import {
-  CircularProgress,
+  Box,
+  LinearProgress,
   Button as MuiButton,
   ButtonProps as MuiButtonProps,
 } from "@mui/material";
@@ -17,17 +18,14 @@ export const Button = memo(
     label,
     ...rest
   }: ButtonProps) => (
-    <MuiButton variant={variant} {...rest}>
+    <MuiButton variant={variant} sx={{ flexDirection: "column" }} {...rest}>
+      {label}
       {isLoading ? (
-        <CircularProgress
-          sx={{
-            width: "20px !important",
-            height: "20px !important",
-            color: "white",
-          }}
-        />
+        <LinearProgress sx={{ width: "100%" }} />
+      ) : variant === "contained" ? (
+        <Box width="100%" height="4px" />
       ) : (
-        label
+        <></>
       )}
     </MuiButton>
   )

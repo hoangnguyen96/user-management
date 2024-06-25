@@ -58,11 +58,11 @@ exports[`ListCustomersContent component Should render snapshot correctly 1`] = `
                 </svg>
               </div>
               <div
-                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-sfs0yr-MuiInputBase-root-MuiInput-root"
+                class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-94omkc-MuiInputBase-root-MuiInput-root"
               >
                 <input
                   aria-label="search"
-                  class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                  class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
                   placeholder="Search…"
                   type="text"
                   value=""
@@ -203,7 +203,7 @@ exports[`ListCustomersContent component Should render snapshot correctly 1`] = `
                 USA
               </span>
               <button
-                class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1pyiguu-MuiButtonBase-root-MuiButton-root"
+                class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1f3a2p5-MuiButtonBase-root-MuiButton-root"
                 data-testid="button-toggle"
                 tabindex="0"
                 type="button"
@@ -387,11 +387,11 @@ exports[`ListCustomersContent component Should render snapshot correctly 1`] = `
               </svg>
             </div>
             <div
-              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-sfs0yr-MuiInputBase-root-MuiInput-root"
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-94omkc-MuiInputBase-root-MuiInput-root"
             >
               <input
                 aria-label="search"
-                class="MuiInputBase-input MuiInput-input css-1x51dt5-MuiInputBase-input-MuiInput-input"
+                class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
                 placeholder="Search…"
                 type="text"
                 value=""
@@ -532,7 +532,7 @@ exports[`ListCustomersContent component Should render snapshot correctly 1`] = `
               USA
             </span>
             <button
-              class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1pyiguu-MuiButtonBase-root-MuiButton-root"
+              class="MuiButtonBase-root MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-activate MuiButton-activatePrimary MuiButton-sizeMedium MuiButton-activateSizeMedium MuiButton-colorPrimary css-1f3a2p5-MuiButtonBase-root-MuiButton-root"
               data-testid="button-toggle"
               tabindex="0"
               type="button"

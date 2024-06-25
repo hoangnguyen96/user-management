@@ -1,3 +1,5 @@
+import { UserResponse } from "../models/user";
+
 const removeVietnameseTones = (str: string) => {
   str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
   str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
@@ -23,4 +25,21 @@ export const customUsername = (name?: string, phone?: string) => {
   const outputStr = removeVietnameseTones(name || "");
 
   return `${outputStr.split(" ").join("").toLowerCase().slice(0, 8)}${phone?.slice(-3)}`;
+};
+
+export const findUser = (
+  data: UserResponse[],
+  username: string,
+  password: string
+) => {
+  const user = data.find(
+    (user: { username: string; password: string }) =>
+      user.username === username && user.password === password
+  );
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  return user;
 };

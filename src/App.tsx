@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 
 // Constants
 import { PUBLIC_ROUTE } from "./routes/public-routes";
-import { ROUTES } from "@app/constants";
+import { DELAY_TIME_API, ROUTES, STALE_TIME_API } from "@app/constants";
 
 // Routes
 import RouteAuthenticated from "./routes/RouteAuthenticated";
@@ -23,7 +23,15 @@ const LazyFallbackContent = lazy(
 );
 
 function App() {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: STALE_TIME_API,
+        retry: DELAY_TIME_API,
+        refetchOnWindowFocus: false,
+      },
+    },
+  });
 
   return (
     <QueryClientProvider client={queryClient}>

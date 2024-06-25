@@ -1,6 +1,13 @@
-import { useState } from "react";
+import { ChangeEvent, useCallback, useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Box, Container, Divider, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Pagination,
+  Stack,
+  Typography,
+} from "@mui/material";
 
 // Constants
 import { SORT_DATA_PRODUCT } from "@app/constants";
@@ -9,27 +16,18 @@ import { SORT_DATA_PRODUCT } from "@app/constants";
 import { LIST_CONTENT_PRODUCT } from "./__mocks__/mock-data";
 
 // Components
-import { SearchBar, Button } from "../Common";
+import { SearchBar } from "../Common";
 import { Selection } from "../Selection";
 
 const ListProductContent = () => {
-  const [pagination, setPagination] = useState(1);
+  const [pagination, setPagination] = useState(0);
 
-  const handleChangePagination = (value: number) => {
-    return setPagination(value);
-  };
-
-  const handleChangeNextPage = () => {
-    if (pagination === 4) return setPagination(4);
-
-    return setPagination((pagination) => pagination + 1);
-  };
-
-  const handleChangePrevPage = () => {
-    if (pagination === 0) return setPagination(0);
-
-    return setPagination((pagination) => pagination - 1);
-  };
+  const handleChangePagination = useCallback(
+    (_event: ChangeEvent<unknown>, value: number) => {
+      setPagination(value - 1);
+    },
+    [setPagination]
+  );
 
   return (
     <Container
@@ -139,40 +137,20 @@ const ListProductContent = () => {
           p="32px 40px 40px"
           alignItems="center"
           justifyContent="space-between"
+          mt="auto"
         >
           <Typography variant="subtitle2">
             Showing data 1 to 8 of 256K entries
           </Typography>
-          <Stack flexDirection="row" gap="12px">
-            <Button
-              variant="normal"
-              label="<"
-              sx={{ p: 0, minWidth: "26px", height: "24px", fontSize: "12px" }}
-              {...(pagination === 0 ? { disabled: true } : {})}
-              onClick={handleChangePrevPage}
-            />
-            {[1, 2, 3, 4, 5].map((item, index) => (
-              <Button
-                key={item}
-                variant={index === pagination ? "contained" : "normal"}
-                label={`${item}`}
-                sx={{
-                  p: 0,
-                  minWidth: "26px",
-                  height: "24px",
-                  fontSize: "12px",
-                }}
-                onClick={() => handleChangePagination(index)}
-              />
-            ))}
-            <Button
-              variant="normal"
-              label=">"
-              sx={{ p: 0, minWidth: "26px", height: "24px", fontSize: "12px" }}
-              {...(pagination === 4 ? { disabled: true } : {})}
-              onClick={handleChangeNextPage}
-            />
-          </Stack>
+          <Pagination
+            count={5}
+            page={pagination + 1}
+            variant="outlined"
+            shape="rounded"
+            onChange={handleChangePagination}
+            siblingCount={1}
+            boundaryCount={1}
+          />
         </Stack>
       </Stack>
     </Container>

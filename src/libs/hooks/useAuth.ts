@@ -5,6 +5,7 @@ import { useAuthStore } from "@app/stores";
 
 // Api
 import { useAuthLogout } from "@app/api";
+import { useCallback } from "react";
 
 export const useAuth = () => {
   const queryClient = useQueryClient();
@@ -12,8 +13,13 @@ export const useAuth = () => {
   // Auth
   const clearAuth = useAuthStore((state) => state.clearAuth);
 
+  const removeAuthLocal = useCallback(
+    () => localStorage.removeItem("auth"),
+    []
+  );
+
   // Logout
-  const { mutate: logOut } = useAuthLogout();
+  const { mutate: logOut } = useAuthLogout(removeAuthLocal);
 
   const handleLogout = () => {
     clearAuth();

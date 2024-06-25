@@ -4,7 +4,7 @@ import { WrapperRouter, renderWithQueryClient } from "@app/ui/test-utils";
 import DashboardLayout from "..";
 
 // Mock the logo import
-jest.mock("/src/assets/images/user-manage.svg", () => "logo.svg");
+jest.mock("/images/user-manage.svg", () => "logo.svg");
 
 describe("DashboardLayout component", () => {
   it("Should render snapshot correctly", () => {

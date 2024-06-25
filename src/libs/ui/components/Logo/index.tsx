@@ -9,7 +9,7 @@ import { ROUTES } from "@app/constants";
 import { useAuthStore } from "@app/stores";
 
 // Logo
-import logo from "/src/assets/images/user-manage.svg";
+import logo from "/images/user-manage.svg";
 import { themeDefault } from "../../themes";
 
 const Logo = () => {

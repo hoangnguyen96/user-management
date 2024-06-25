@@ -2,7 +2,7 @@ import { Link, Typography } from "@mui/material";
 import { Meta, StoryObj } from "@storybook/react";
 
 // Logo
-import logo from "../../../../assets/images/user-manage.svg";
+import logo from "/images/user-manage.svg";
 
 const Logo = () => (
   <Link display="flex" flexDirection="row" alignItems="center" gap="8px">

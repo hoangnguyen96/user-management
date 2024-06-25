@@ -25,16 +25,7 @@ const SearchBar = ({ placeholder, value }: SearchBarProps) => {
         value={value}
         inputProps={{ "aria-label": "search" }}
         sx={{
-          padding: "8px 8px 8px 40px",
-          fontSize: "14px",
-          borderRadius: "12px",
           backgroundColor: "#f9fbff",
-          "::after": {
-            display: "none",
-          },
-          "::before": {
-            display: "none",
-          },
         }}
       />
     </Box>

@@ -35,16 +35,7 @@ export const SearchBar = memo(
           value={value}
           onChange={onChange}
           sx={{
-            padding: "8px 8px 8px 40px",
-            fontSize: "14px",
-            borderRadius: "12px",
             backgroundColor: backgroundSearch,
-            "::after": {
-              display: "none",
-            },
-            "::before": {
-              display: "none",
-            },
           }}
           {...props}
         />

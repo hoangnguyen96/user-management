@@ -1,6 +1,7 @@
 import { Avatar, Box, Link, Stack, SvgIcon, Typography } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Meta, StoryObj } from "@storybook/react";
+import { avatar1 } from "@app/ui/images";
 
 const Footer = () => (
   <Box width="306px">
@@ -44,7 +45,7 @@ const Footer = () => (
       sx={{ cursor: "pointer" }}
     >
       <Avatar
-        src="/src/libs/ui/images/avatar1.png"
+        src={avatar1}
         alt="user-management"
         style={{
           width: "42px",

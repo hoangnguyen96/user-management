@@ -57,6 +57,10 @@ jest.mock("@app/api", () => ({
     data: productListData,
     errorMessage: "error",
   })),
+  useGetListProductOfUser: jest.fn(() => ({
+    isLoading: false,
+    data: productListData,
+  })),
   useGetListCustomers: jest.fn(() => ({
     data: [mockCustomer],
   })),
@@ -81,6 +85,10 @@ jest.mock("@app/api", () => ({
 
 describe("ListProductContent component", () => {
   const mockUseMatch = useMatch as jest.MockedFunction<typeof useMatch>;
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("Should render snapshot correctly", () => {
     expect(

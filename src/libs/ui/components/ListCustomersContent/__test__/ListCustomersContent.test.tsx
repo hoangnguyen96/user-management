@@ -44,6 +44,10 @@ jest.mock("@app/api", () => ({
 }));
 
 describe("ListCustomersContent component", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(
       renderWithQueryClient(<ListCustomersContent isAdmin={true} id="1" />)

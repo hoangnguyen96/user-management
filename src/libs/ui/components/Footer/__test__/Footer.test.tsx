@@ -37,6 +37,10 @@ describe("Footer component", () => {
     });
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(renderWithQueryClient(<Footer />)).toMatchSnapshot();
   });

@@ -2,6 +2,9 @@ import { createWithEqualityFn } from "zustand/traditional";
 import { shallow } from "zustand/shallow";
 import { persist } from "zustand/middleware";
 
+// Constants
+import { LOCAL_STORAGE } from "@app/constants";
+
 // Models
 import { AuthState, AuthStore } from "@app/models";
 
@@ -39,7 +42,7 @@ export const useAuthStore = createWithEqualityFn<AuthStore>()(
         });
       },
     }),
-    { name: "auth" }
+    { name: LOCAL_STORAGE.AUTH }
   ),
   shallow
 );

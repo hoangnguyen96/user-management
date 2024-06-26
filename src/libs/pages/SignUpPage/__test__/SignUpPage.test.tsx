@@ -36,6 +36,10 @@ describe("SignUpPage component", () => {
     jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(
       renderWithQueryClient(

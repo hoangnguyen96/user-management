@@ -12,7 +12,7 @@ import { HttpClient } from "@app/services";
 export const useGetListCustomers = (enabled = true) => {
   const { data, error, ...rest } = useQuery<UserResponse[], Error>({
     enabled,
-    queryKey: QUERY_KEY.CUSTOMERS_LIST,
+    queryKey: [QUERY_KEY.CUSTOMERS_LIST],
     queryFn: async () =>
       await HttpClient.get<UserResponse[]>(`/${ENDPOINTS.USER}`),
   });
@@ -26,7 +26,7 @@ export const useGetListCustomers = (enabled = true) => {
 
 export const useGetCustomerById = (id: string) => {
   const { data, error, ...rest } = useQuery<UserResponse, Error>({
-    queryKey: QUERY_KEY.CUSTOMERS_LIST_BY_ID(id),
+    queryKey: [QUERY_KEY.CUSTOMERS_LIST_BY_ID, id],
     queryFn: async () =>
       await HttpClient.get<UserResponse>(`/${ENDPOINTS.USER}/${id}`),
   });
@@ -44,7 +44,7 @@ export const useCreateCustomer = () => {
     Error,
     Partial<UserResponse>
   >({
-    mutationKey: MUTATION_KEY.CREATE_CUSTOMER,
+    mutationKey: [MUTATION_KEY.CREATE_CUSTOMER],
     mutationFn: async (payload: Partial<UserResponse>) =>
       await HttpClient.post<UserResponse[]>(`/${ENDPOINTS.USER}`, payload),
   });

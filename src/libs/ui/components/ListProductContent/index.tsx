@@ -17,6 +17,7 @@ import {
   useCreateProduct,
   useGetListCustomers,
   useGetListProduct,
+  useGetListProductOfUser,
 } from "@app/api";
 
 // Models
@@ -37,7 +38,7 @@ import ModalCreateProduct from "../Modal/ModalCreateProduct";
 
 interface ListProductContentProps {
   isAdmin?: boolean;
-  id?: string;
+  id: string;
 }
 
 const ListProductContent = ({
@@ -58,25 +59,31 @@ const ListProductContent = ({
   const isMatchProduct = !!useMatch(ROUTES.PRODUCT);
 
   const {
-    isLoading,
-    refetch: refetchList,
+    isLoading: isLoadingListAll,
+    refetch: refetchListAll,
     data: productListData,
     errorMessage: errorGetList,
-  } = useGetListProduct(isAdmin, id);
+  } = useGetListProduct();
+
+  const { isLoading: isLoadingListOfUser, data: productListOfUser } =
+    useGetListProductOfUser(id);
 
   const { data: listUser } = useGetListCustomers();
 
   const { isPending: isLoadingCreate, mutate: createProduct } =
     useCreateProduct();
 
-  const productList = useMemo(
-    () => (errorGetList || productListData.length <= 0 ? [] : productListData),
-    [productListData]
-  );
+  const productList = useMemo(() => {
+    if (!isAdmin) {
+      return productListOfUser;
+    }
+
+    return errorGetList || productListData.length <= 0 ? [] : productListData;
+  }, [isAdmin, productListData, productListOfUser]);
 
   // Search Bar
   useEffect(() => {
-    if (!isLoading) {
+    if (!isLoadingListAll) {
       if (filterText) {
         const listByName = filterListProductByName(productList, filterText);
         const filteredList = dividePaginationProduct(listByName);
@@ -90,7 +97,7 @@ const ListProductContent = ({
 
   // Selection Bar
   useEffect(() => {
-    if (!isLoading) {
+    if (!isLoadingListAll) {
       const sortedProductList = sortProductList(productList, selectionValue);
       if (sortedProductList.length > 0) {
         const list = dividePaginationProduct(sortedProductList);
@@ -103,7 +110,7 @@ const ListProductContent = ({
   useEffect(() => {
     const listAll = dividePaginationProduct(productList);
     setListPage(listAll);
-  }, [isLoading]);
+  }, [isLoadingListAll, isLoadingListOfUser]);
 
   const handleChangePagination = useCallback(
     (_event: ChangeEvent<unknown>, value: number) => {
@@ -133,8 +140,8 @@ const ListProductContent = ({
 
   const handleCreateProductSuccess = useCallback(() => {
     setIsOpenModalCreateProduct(false);
-    refetchList();
-  }, [refetchList, setIsOpenModalCreateProduct]);
+    refetchListAll();
+  }, [refetchListAll, setIsOpenModalCreateProduct]);
 
   const handleCreateProductFailed = useCallback(
     () => alert("Create Product failed!"),
@@ -174,7 +181,7 @@ const ListProductContent = ({
         {/* List */}
         <ListItemProduct
           isAdmin={isAdmin}
-          isLoading={isLoading}
+          isLoading={isLoadingListAll}
           isPending={isPending}
           userId={id}
           listCurrent={currentPageData}
@@ -182,7 +189,7 @@ const ListProductContent = ({
           error={errorGetList}
           pagination={pagination}
           paginationList={productList}
-          refetchList={refetchList}
+          refetchList={refetchListAll}
           onChangePagination={handleChangePagination}
         />
       </Box>

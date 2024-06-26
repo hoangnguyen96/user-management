@@ -25,6 +25,10 @@ describe("FormProduct component", () => {
     onNavigate: mockOnNavigate,
   };
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(
       renderWithQueryClient(<FormController {...props} />)

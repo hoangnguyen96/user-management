@@ -13,6 +13,10 @@ jest.mock("react-router-dom", () => ({
 }));
 
 describe("LandingPageBase component", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(render(<LandingPageBase />)).toMatchSnapshot();
   });

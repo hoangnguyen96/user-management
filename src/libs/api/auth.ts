@@ -1,12 +1,7 @@
 import { useMutation } from "@tanstack/react-query";
 
 // Constants
-import {
-  ENDPOINTS,
-  ERROR_MESSAGES,
-  METHOD,
-  MUTATION_KEY,
-} from "@app/constants";
+import { ENDPOINTS, ERROR_MESSAGES, MUTATION_KEY } from "@app/constants";
 
 // Models
 import { ApiResponse, LoginCredentials, UserResponse } from "@app/models";
@@ -22,7 +17,7 @@ export const useAuthLogin = () => {
     {
       mutationFn: async ({ username, password }: LoginCredentials) => {
         const response = await fetch(`${baseApi}/${ENDPOINTS.USER}`, {
-          method: METHOD.GET,
+          method: "GET",
           headers: { "content-type": "application/json" },
         });
 
@@ -46,7 +41,7 @@ export const useAuthLogin = () => {
 
 export const useAuthLogout = (callback: () => void) => {
   const { error, ...rest } = useMutation<ApiResponse, Error>({
-    mutationKey: MUTATION_KEY.LOGOUT,
+    mutationKey: [MUTATION_KEY.LOGOUT],
     mutationFn: async () => {
       await callback();
 

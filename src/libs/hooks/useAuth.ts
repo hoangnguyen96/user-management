@@ -1,11 +1,14 @@
+import { useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+
+// Constants
+import { LOCAL_STORAGE } from "@app/constants";
 
 // Stores
 import { useAuthStore } from "@app/stores";
 
 // Api
 import { useAuthLogout } from "@app/api";
-import { useCallback } from "react";
 
 export const useAuth = () => {
   const queryClient = useQueryClient();
@@ -14,7 +17,7 @@ export const useAuth = () => {
   const clearAuth = useAuthStore((state) => state.clearAuth);
 
   const removeAuthLocal = useCallback(
-    () => localStorage.removeItem("auth"),
+    () => localStorage.removeItem(LOCAL_STORAGE.AUTH),
     []
   );
 

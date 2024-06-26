@@ -44,6 +44,10 @@ describe("LoginPage component", () => {
     ]);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(renderWithQueryClient(<LoginPage />)).toMatchSnapshot();
   });

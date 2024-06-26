@@ -58,6 +58,10 @@ const props = {
 const spyPut = jest.spyOn(HttpClient, "put");
 
 describe("ListItemProduct component", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("Should render snapshot correctly", () => {
     expect(
       renderWithQueryClient(<ListItemProduct {...props} />)

@@ -9,19 +9,29 @@ import { Product, ProductPayload } from "../models";
 // Services
 import { HttpClient } from "@app/services";
 
-const endpointUser = ENDPOINTS.USER;
-const endpointProduct = ENDPOINTS.PRODUCT;
-
-export const useGetListProduct = (isAdmin: boolean, userId?: string) => {
+export const useGetListProduct = () => {
   const { data, error, ...rest } = useQuery<Product[], Error>({
     enabled: true,
-    queryKey: QUERY_KEY.PRODUCT_LIST,
-    queryFn: async () => {
-      const path = isAdmin
-        ? `/${endpointProduct}`
-        : `/${endpointUser}/${userId}/${endpointProduct}`;
-      return await HttpClient.get<Product[]>(path);
-    },
+    queryKey: [QUERY_KEY.PRODUCT_LIST],
+    queryFn: async () =>
+      await HttpClient.get<Product[]>(`/${ENDPOINTS.PRODUCT}`),
+  });
+
+  return {
+    ...rest,
+    data: data || [],
+    errorMessage: error?.message || "",
+  };
+};
+
+export const useGetListProductOfUser = (userId: string) => {
+  const { data, error, ...rest } = useQuery<Product[], Error>({
+    enabled: true,
+    queryKey: [QUERY_KEY.PRODUCT_LIST_OF_USER],
+    queryFn: async () =>
+      await HttpClient.get<Product[]>(
+        `/${ENDPOINTS.USER}/${userId}/${ENDPOINTS.PRODUCT}`
+      ),
   });
 
   return {
@@ -33,10 +43,10 @@ export const useGetListProduct = (isAdmin: boolean, userId?: string) => {
 
 export const useGetProductById = (userId: string, id: string) => {
   const { data, error, ...rest } = useQuery<Product, Error>({
-    queryKey: QUERY_KEY.CUSTOMERS_LIST_BY_ID(id),
+    queryKey: [QUERY_KEY.PRODUCT_LIST_OF_USER_BY_ID, id],
     queryFn: async () =>
       await HttpClient.get<Product>(
-        `/${endpointUser}/${userId}/${endpointProduct}/${id}`
+        `/${ENDPOINTS.USER}/${userId}/${ENDPOINTS.PRODUCT}/${id}`
       ),
   });
 
@@ -49,10 +59,10 @@ export const useGetProductById = (userId: string, id: string) => {
 
 export const useCreateProduct = () => {
   const { error, ...rest } = useMutation<Product[], Error, Partial<Product>>({
-    mutationKey: MUTATION_KEY.CREATE_PRODUCT,
+    mutationKey: [MUTATION_KEY.CREATE_PRODUCT],
     mutationFn: async (payload) =>
       await HttpClient.post<Product[]>(
-        `/${endpointUser}/${payload.userId}/${endpointProduct}`,
+        `/${ENDPOINTS.USER}/${payload.userId}/${ENDPOINTS.PRODUCT}`,
         payload
       ),
   });
@@ -67,7 +77,7 @@ export const useUpdateProduct = () => {
   const { error, ...rest } = useMutation<Product, Error, ProductPayload>({
     mutationFn: async ({ id, userId, payload }: ProductPayload) =>
       await HttpClient.put<Product>(
-        `/${endpointUser}/${userId}/${endpointProduct}/${id}`,
+        `/${ENDPOINTS.USER}/${userId}/${ENDPOINTS.PRODUCT}/${id}`,
         payload
       ),
   });
@@ -82,7 +92,7 @@ export const useDeleteProduct = () => {
   const { error, ...rest } = useMutation<Product, Error, Partial<Product>>({
     mutationFn: async ({ id, userId }: Partial<Product>) =>
       await HttpClient.delete<Product>(
-        `/${endpointUser}/${userId}/${endpointProduct}/${id}`
+        `/${ENDPOINTS.USER}/${userId}/${ENDPOINTS.PRODUCT}/${id}`
       ),
   });
 

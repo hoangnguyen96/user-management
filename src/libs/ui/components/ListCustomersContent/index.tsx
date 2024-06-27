@@ -100,7 +100,7 @@ const ListCustomersContent = ({
   useEffect(() => {
     const listAll = dividePaginationCustomers(customersList);
     setListPage(listAll);
-  }, [isLoadingListAll, isLoadingListById]);
+  }, [isLoadingListAll, isLoadingListById, customersList]);
 
   const handleChangePagination = useCallback(
     (_event: ChangeEvent<unknown>, value: number) => {

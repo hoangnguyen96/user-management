@@ -10,7 +10,7 @@ Author: Hoang Nguyen Van <[hoang.nguyenvan@asnet.com.vn](hoang.nguyenvan@asnet.c
 
 ### APIs
 
-- API endpoint: [user_management](https://664ab70ba300e8795d42b37c.mockapi.io/api/v1/user)
+- Mock API: [user_management](https://664ab70ba300e8795d42b37c.mockapi.io/api/v1/user)
 
 ## HOW TO RUN
 

@@ -34,10 +34,10 @@ const ModalCreateProduct = ({
     (values: Partial<ProductInit>) => {
       const payload: Partial<Product> = {
         ...values,
-        code: `POD0${values.userId || idCustomer}`,
+        code: `POD00${values.userId || idCustomer}`,
         name: values.name,
         quantity: parseInt(values.quantity || ""),
-        image: "/src/libs/ui/images/img9.jpg",
+        image: "https://i.ibb.co/vkbZPGr/img10.jpg",
         price: isAdmin && values.price ? parseInt(values.price) : 0,
         userId: values.userId || idCustomer,
       };

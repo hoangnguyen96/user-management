@@ -60,6 +60,8 @@ jest.mock("@app/api", () => ({
   useGetListProductOfUser: jest.fn(() => ({
     isLoading: false,
     data: productListData,
+    refetch: jest.fn(),
+    errorMessage: "errorOfUser",
   })),
   useGetListCustomers: jest.fn(() => ({
     data: [mockCustomer],

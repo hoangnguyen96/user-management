@@ -65,8 +65,12 @@ const ListProductContent = ({
     errorMessage: errorGetList,
   } = useGetListProduct();
 
-  const { isLoading: isLoadingListOfUser, data: productListOfUser } =
-    useGetListProductOfUser(id);
+  const {
+    isLoading: isLoadingListOfUser,
+    refetch: refetchListOfUser,
+    data: productListOfUser,
+    errorMessage: errorGetListOfUser,
+  } = useGetListProductOfUser(id);
 
   const { data: listUser } = useGetListCustomers();
 
@@ -186,10 +190,10 @@ const ListProductContent = ({
           userId={id}
           listCurrent={currentPageData}
           listPage={listPage}
-          error={errorGetList}
+          error={errorGetList || errorGetListOfUser}
           pagination={pagination}
           paginationList={productList}
-          refetchList={refetchListAll}
+          refetchList={refetchListAll || refetchListOfUser}
           onChangePagination={handleChangePagination}
         />
       </Box>

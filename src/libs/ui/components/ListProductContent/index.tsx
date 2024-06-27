@@ -65,12 +65,8 @@ const ListProductContent = ({
     errorMessage: errorGetList,
   } = useGetListProduct();
 
-  const {
-    isLoading: isLoadingListOfUser,
-    refetch: refetchListOfUser,
-    data: productListOfUser,
-    errorMessage: errorGetListOfUser,
-  } = useGetListProductOfUser(id);
+  const { isLoading: isLoadingListOfUser, data: productListOfUser } =
+    useGetListProductOfUser(id);
 
   const { data: listUser } = useGetListCustomers();
 
@@ -114,7 +110,7 @@ const ListProductContent = ({
   useEffect(() => {
     const listAll = dividePaginationProduct(productList);
     setListPage(listAll);
-  }, [isLoadingListAll, isLoadingListOfUser]);
+  }, [isLoadingListAll, isLoadingListOfUser, productList]);
 
   const handleChangePagination = useCallback(
     (_event: ChangeEvent<unknown>, value: number) => {
@@ -190,10 +186,10 @@ const ListProductContent = ({
           userId={id}
           listCurrent={currentPageData}
           listPage={listPage}
-          error={errorGetList || errorGetListOfUser}
+          error={errorGetList}
           pagination={pagination}
           paginationList={productList}
-          refetchList={refetchListAll || refetchListOfUser}
+          refetchList={refetchListAll}
           onChangePagination={handleChangePagination}
         />
       </Box>

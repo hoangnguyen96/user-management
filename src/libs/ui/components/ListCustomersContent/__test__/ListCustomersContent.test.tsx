@@ -7,18 +7,19 @@ import { UserResponse } from "@app/models";
 import ListCustomersContent from "..";
 import { USER_ROLE } from "@app/constants";
 import { fireEvent, waitFor } from "@testing-library/react";
+import { LIST_CONTENT } from "../__mocks__/mock-data";
 
 const mockCustomer: UserResponse = {
-  id: "1",
-  fullName: "John Doe",
-  company: "Company A",
-  phoneNumber: "1234567890",
-  email: "john@example.com",
-  country: "USA",
-  status: true,
+  fullName: "Jane Cooper",
   role: USER_ROLE.ADMIN,
+  company: "Microsoft",
+  phoneNumber: "(225) 555-0118",
+  email: "jane@microsoft.com",
+  country: "United States",
+  status: true,
   username: "admin",
   password: "123456",
+  id: "1",
 };
 
 jest.mock("@app/api", () => ({
@@ -30,7 +31,7 @@ jest.mock("@app/api", () => ({
   useGetListCustomers: jest.fn(() => ({
     isLoading: false,
     refetch: jest.fn(),
-    data: [mockCustomer],
+    data: LIST_CONTENT,
     errorMessage: "",
   })),
   useUpdateCustomer: jest.fn(() => ({

@@ -520,29 +520,11 @@ exports[`Product component Should render snapshot correctly 1`] = `
           <hr
             class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
           />
-          <div
-            class="MuiBox-root css-irgrw4"
+          <span
+            class="MuiTypography-root MuiTypography-caption css-en5znm-MuiTypography-root"
           >
-            <span
-              class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-1b8evyp-MuiCircularProgress-root"
-              role="progressbar"
-              style="width: 40px; height: 40px;"
-            >
-              <svg
-                class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-                viewBox="22 22 44 44"
-              >
-                <circle
-                  class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
-                  cx="44"
-                  cy="44"
-                  fill="none"
-                  r="20.2"
-                  stroke-width="3.6"
-                />
-              </svg>
-            </span>
-          </div>
+            Data Null
+          </span>
           <div
             class="MuiStack-root css-bmu17z-MuiStack-root"
           >
@@ -553,10 +535,10 @@ exports[`Product component Should render snapshot correctly 1`] = `
               1
                to
                
-              0
+              1
                of
                
-              0
+              1
                entries
             </h6>
             <nav
@@ -586,6 +568,20 @@ exports[`Product component Should render snapshot correctly 1`] = `
                         d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
                       />
                     </svg>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-current="true"
+                    aria-label="page 1"
+                    class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded Mui-selected MuiPaginationItem-page css-ahvmcb-MuiButtonBase-root-MuiPaginationItem-root"
+                    tabindex="0"
+                    type="button"
+                  >
+                    1
+                    <span
+                      class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                    />
                   </button>
                 </li>
                 <li>
@@ -1132,29 +1128,11 @@ exports[`Product component Should render snapshot correctly 1`] = `
         <hr
           class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
         />
-        <div
-          class="MuiBox-root css-irgrw4"
+        <span
+          class="MuiTypography-root MuiTypography-caption css-en5znm-MuiTypography-root"
         >
-          <span
-            class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-1b8evyp-MuiCircularProgress-root"
-            role="progressbar"
-            style="width: 40px; height: 40px;"
-          >
-            <svg
-              class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
-              viewBox="22 22 44 44"
-            >
-              <circle
-                class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
-                cx="44"
-                cy="44"
-                fill="none"
-                r="20.2"
-                stroke-width="3.6"
-              />
-            </svg>
-          </span>
-        </div>
+          Data Null
+        </span>
         <div
           class="MuiStack-root css-bmu17z-MuiStack-root"
         >
@@ -1165,10 +1143,10 @@ exports[`Product component Should render snapshot correctly 1`] = `
             1
              to
              
-            0
+            1
              of
              
-            0
+            1
              entries
           </h6>
           <nav
@@ -1198,6 +1176,20 @@ exports[`Product component Should render snapshot correctly 1`] = `
                       d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
                     />
                   </svg>
+                </button>
+              </li>
+              <li>
+                <button
+                  aria-current="true"
+                  aria-label="page 1"
+                  class="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-outlined MuiPaginationItem-rounded Mui-selected MuiPaginationItem-page css-ahvmcb-MuiButtonBase-root-MuiPaginationItem-root"
+                  tabindex="0"
+                  type="button"
+                >
+                  1
+                  <span
+                    class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+                  />
                 </button>
               </li>
               <li>

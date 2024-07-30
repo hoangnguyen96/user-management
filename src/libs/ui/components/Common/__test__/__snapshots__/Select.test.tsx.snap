@@ -6,10 +6,11 @@ exports[`Select component Should render snapshot correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiStack-root css-1f0fbh5-MuiStack-root"
+        class="MuiStack-root css-1007xo3-MuiStack-root"
       >
         <div
-          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary  css-jvh0ve-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary  css-cmc5oj-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+          data-testid="select-label-name"
         >
           <div
             aria-controls=":r0:"
@@ -64,10 +65,11 @@ exports[`Select component Should render snapshot correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiStack-root css-1f0fbh5-MuiStack-root"
+      class="MuiStack-root css-1007xo3-MuiStack-root"
     >
       <div
-        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary  css-jvh0ve-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary  css-cmc5oj-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+        data-testid="select-label-name"
       >
         <div
           aria-controls=":r0:"

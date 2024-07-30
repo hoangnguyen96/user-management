@@ -20,7 +20,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
             class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
           />
           <div
-            class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+            class="MuiFormControl-root css-e3ss4v-MuiFormControl-root"
           >
             <div
               class="MuiStack-root css-1qpgmw8-MuiStack-root"
@@ -37,7 +37,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
@@ -81,7 +81,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
                   class="MuiStack-root css-aubdti-MuiStack-root"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
@@ -160,7 +160,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
           class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
         />
         <div
-          class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+          class="MuiFormControl-root css-e3ss4v-MuiFormControl-root"
         >
           <div
             class="MuiStack-root css-1qpgmw8-MuiStack-root"
@@ -177,7 +177,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                 >
                   <div
                     class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"
@@ -221,7 +221,7 @@ exports[`LoginPage component Should render snapshot correctly 1`] = `
                 class="MuiStack-root css-aubdti-MuiStack-root"
               >
                 <div
-                  class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                  class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                 >
                   <div
                     class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1t64y2h-MuiInputBase-root-MuiOutlinedInput-root"

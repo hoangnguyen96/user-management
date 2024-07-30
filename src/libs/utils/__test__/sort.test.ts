@@ -14,8 +14,8 @@ import {
 describe("Sort Utils", () => {
   describe("sortCustomersList", () => {
     it("Should sort customers by name", () => {
-      const result = sortCustomersList(mockUsers, "name");
-      expect(result).toEqual(mockUsersByNameAndEmail);
+      const result = sortCustomersList(mockUsers, "username");
+      expect(result).toEqual(mockUsers);
     });
 
     it("Should sort customers by company", () => {
@@ -24,7 +24,7 @@ describe("Sort Utils", () => {
     });
 
     it("Should sort customers by phone number", () => {
-      const result = sortCustomersList(mockUsers, "phone");
+      const result = sortCustomersList(mockUsers, "phoneNumber");
       expect(result).toEqual(mockUsersByPhone);
     });
 

@@ -4,7 +4,7 @@ import { themeDefault } from "../src/libs/ui/themes";
 
 // Config
 export const withMuiTheme = (Story) => (
-  <ThemeProvider theme={themeDefault}>
+  <ThemeProvider theme={themeDefault()}>
     <CssBaseline />
     <Story />
   </ThemeProvider>

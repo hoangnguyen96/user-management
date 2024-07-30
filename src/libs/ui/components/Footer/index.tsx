@@ -22,10 +22,9 @@ import { useAuth } from "@app/hooks";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Logout } from "@mui/icons-material";
 import { themeDefault } from "../../themes";
-import { avatar1 } from "@app/ui/images";
 
 const Footer = () => {
-  const isLargeScreen = useMediaQuery(themeDefault.breakpoints.up("lg"));
+  const isLargeScreen = useMediaQuery(themeDefault().breakpoints.up("lg"));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -83,6 +82,7 @@ const Footer = () => {
         </Box>
       )}
       <Stack
+        data-testid="logout-account"
         flexDirection="row"
         justifyContent="flex-start"
         gap="12px"
@@ -91,7 +91,7 @@ const Footer = () => {
         onClick={handleClick}
       >
         <Avatar
-          src={avatar1}
+          src="/src/libs/ui/images/avatar1.png"
           alt="user-management"
           sx={{
             width: "42px",

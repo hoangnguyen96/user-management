@@ -10,6 +10,7 @@ exports[`Footer component Should render snapshot correctly 1`] = `
       >
         <div
           class="MuiStack-root css-rtrdhm-MuiStack-root"
+          data-testid="logout-account"
         >
           <div
             class="MuiAvatar-root MuiAvatar-circular css-251k5v-MuiAvatar-root"
@@ -30,6 +31,7 @@ exports[`Footer component Should render snapshot correctly 1`] = `
     >
       <div
         class="MuiStack-root css-rtrdhm-MuiStack-root"
+        data-testid="logout-account"
       >
         <div
           class="MuiAvatar-root MuiAvatar-circular css-251k5v-MuiAvatar-root"

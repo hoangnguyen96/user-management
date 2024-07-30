@@ -2,8 +2,22 @@ import { WrapperRouter, renderWithQueryClient } from "@app/ui/test-utils";
 import { fireEvent, waitFor } from "@testing-library/react";
 import { useMatch } from "react-router-dom";
 
+// Api
+import * as api from "@app/api";
+
+// Utils
+import * as utils from "@app/utils";
+
+// Services
+import { HttpClient } from "@app/services";
+
 // Component
 import ListProductContent from "..";
+import {
+  LIST_CONTENT_PRODUCT,
+  LIST_CONTENT_PRODUCT_PAGE1,
+  LIST_CONTENT_PRODUCT_PAGE2,
+} from "../__mocks__/mock-data";
 
 const mockCustomer = [
   {
@@ -50,21 +64,30 @@ jest.mock("react-router-dom", () => ({
   useMatch: jest.fn(),
 }));
 
+jest.mock("@app/utils", () => ({
+  ...jest.requireActual("@app/utils"),
+  isEnableSubmitButton: jest.fn(),
+  dividePaginationProduct: jest.fn(() => [
+    LIST_CONTENT_PRODUCT_PAGE1,
+    LIST_CONTENT_PRODUCT_PAGE2,
+  ]),
+}));
+
 jest.mock("@app/api", () => ({
   useGetListProduct: jest.fn(() => ({
     isLoading: false,
     refetch: jest.fn(),
-    data: productListData,
-    errorMessage: "error",
+    data: LIST_CONTENT_PRODUCT,
+    errorMessage: "",
   })),
   useGetListProductOfUser: jest.fn(() => ({
     isLoading: false,
     data: productListData,
     refetch: jest.fn(),
-    errorMessage: "errorOfUser",
+    errorMessage: "",
   })),
   useGetListCustomers: jest.fn(() => ({
-    data: [mockCustomer],
+    data: mockCustomer,
   })),
   useCreateProduct: jest.fn(() => ({
     isPending: false,
@@ -84,6 +107,8 @@ jest.mock("@app/api", () => ({
     mutate: jest.fn(),
   })),
 }));
+
+const spyPost = jest.spyOn(HttpClient, "post");
 
 describe("ListProductContent component", () => {
   const mockUseMatch = useMatch as jest.MockedFunction<typeof useMatch>;
@@ -117,20 +142,94 @@ describe("ListProductContent component", () => {
     });
   });
 
-  it("Should handle create product", async () => {
+  it("Should handle change pagination correctly", () => {
+    const { getByRole } = renderWithQueryClient(
+      <WrapperRouter>
+        <ListProductContent isAdmin={true} id="1" />
+      </WrapperRouter>
+    );
+    const paginationButton = getByRole("button", { name: "Go to page 2" });
+    fireEvent.click(paginationButton);
+
+    expect(paginationButton).toBeInTheDocument();
+  });
+
+  it("Should handle close modal add product", async () => {
     mockUseMatch.mockReturnValue({
       params: {},
       pathname: "/product",
       pathnameBase: "/product",
       pattern: { path: "/product" },
     });
+    const { getByTestId, getByText } = renderWithQueryClient(
+      <WrapperRouter>
+        <ListProductContent isAdmin={false} id="1" />
+      </WrapperRouter>
+    );
+
+    fireEvent.click(getByTestId("modal-add-product"));
+
+    await waitFor(() => {
+      expect(getByText(/ADD PRODUCT/i)).toBeInTheDocument();
+    });
+
+    // Close modal
+    fireEvent.click(getByTestId("close-modal-button"));
+  });
+
+  it("Should handle sorted for selection list", async () => {
+    const { getByRole } = renderWithQueryClient(
+      <WrapperRouter>
+        <ListProductContent isAdmin={false} id="1" />
+      </WrapperRouter>
+    );
+
+    const combobox = getByRole("combobox", {
+      name: /short by:/i,
+    });
+    fireEvent.mouseDown(combobox);
+
+    const newOption = getByRole("option", {
+      name: /price/i,
+    });
+    fireEvent.click(newOption);
+
+    expect(newOption).toBeInTheDocument();
+  });
+
+  it("Should handle create product successful", async () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+    const mockCreateProductSuccess = jest
+      .fn()
+      .mockImplementation((_, { onSuccess }) => {
+        onSuccess({
+          code: "POD013",
+          name: "Test Name",
+          quantity: 12,
+          image: "https://i.ibb.co/vkbZPGr/img10.jpg",
+          price: 3,
+          userId: "6",
+        });
+      });
+    (api.useCreateProduct as jest.Mock).mockReturnValue({
+      isisPending: false,
+      mutate: mockCreateProductSuccess,
+    });
+    spyPost.mockImplementationOnce((): Promise<unknown> => Promise.resolve());
+    mockUseMatch.mockReturnValue({
+      params: {},
+      pathname: "/product",
+      pathnameBase: "/product",
+      pattern: { path: "/product" },
+    });
+
     const { getByTestId, getByText, getByRole } = renderWithQueryClient(
       <WrapperRouter>
         <ListProductContent isAdmin={true} id="1" />
       </WrapperRouter>
     );
 
-    fireEvent.click(getByTestId("add-product"));
+    fireEvent.click(getByTestId("modal-add-product"));
 
     await waitFor(() => {
       expect(getByText(/ADD PRODUCT/i)).toBeInTheDocument();
@@ -146,6 +245,18 @@ describe("ListProductContent component", () => {
       "input"
     ) as HTMLInputElement;
 
+    // Ensure the select element is rendered
+    await waitFor(() => {
+      expect(getByTestId("select-user")).toBeInTheDocument();
+    });
+
+    // Use getByTestId directly to get the select element
+    const selectName = getByRole("combobox", {
+      name: /without label/i,
+    });
+
+    expect(selectName).not.toBeNull();
+
     expect(inputNameProduct).toHaveProperty("value");
     expect(inputPriceProduct).toHaveProperty("value");
     expect(inputQuantityProduct).toHaveProperty("value");
@@ -160,9 +271,18 @@ describe("ListProductContent component", () => {
       target: { value: 2 },
     });
 
-    fireEvent.mouseDown(getByRole("combobox"));
-    await waitFor(() => getByRole("listbox"));
+    // Open the dropdown
+    fireEvent.mouseDown(selectName);
+    const newOption = getByRole("option", {
+      name: /floyd miles/i,
+    });
+    fireEvent.click(newOption);
 
+    // Submit the form
     fireEvent.click(getByTestId("button-product"));
+
+    await waitFor(() => {
+      expect(getByText(/ADD PRODUCT/i)).toBeInTheDocument();
+    });
   });
 });

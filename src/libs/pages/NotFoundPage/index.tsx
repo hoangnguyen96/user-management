@@ -18,7 +18,7 @@ const NotFoundPage = () => (
     <Typography
       variant="caption"
       fontWeight="normal"
-      color={themeDefault.palette.error.main}
+      color={themeDefault().palette.error.main}
     >
       Page not found. Please try again later or contact our team for further
       support.

@@ -1,8 +1,8 @@
 import {
   ERROR_MESSAGES,
   LENGTH_PHONE_NUMBER,
-  LENGTH_PRICE,
-  LENGTH_QUANTITY,
+  PRICE,
+  QUANTITY,
 } from "@app/constants";
 
 export const isRequired = (value: string | null | undefined): boolean =>
@@ -32,9 +32,8 @@ export const isEnableSubmitButton = (
   return isMatchAllRequiredFields && errors && !Object.keys(errors).length;
 };
 
-export const validateRequired = (
-  value: string | null | undefined
-): string | true => isRequired(value?.trim()) || ERROR_MESSAGES.FIELD_REQUIRED;
+export const validateRequired = (value: string | null): string | true =>
+  isRequired(value?.trim()) || ERROR_MESSAGES.FIELD_REQUIRED;
 
 // validate form fields
 export const validateRegExpFormat = (
@@ -49,9 +48,10 @@ export const validatePhoneNumber = (number: string) =>
   number.length === LENGTH_PHONE_NUMBER || ERROR_MESSAGES.FORMAT("Phone");
 
 // validate price
-export const validatePrice = (number: string) =>
-  number.length <= LENGTH_PRICE || ERROR_MESSAGES.FORMAT("Price");
+export const validatePrice = (number: number) => {
+  return number <= PRICE || ERROR_MESSAGES.FORMAT("Price");
+};
 
 // validate quantity
-export const validateQuantity = (number: string) =>
-  number.length <= LENGTH_QUANTITY || ERROR_MESSAGES.FORMAT("Quantity");
+export const validateQuantity = (number: number) =>
+  number <= QUANTITY || ERROR_MESSAGES.FORMAT("Quantity");

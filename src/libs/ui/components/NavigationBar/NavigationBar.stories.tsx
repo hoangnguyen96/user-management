@@ -19,7 +19,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const NavBar = () => {
   const [selectedIndex, setSelectedIndex] = useState(1);
-  const isLargeScreen = useMediaQuery(themeDefault.breakpoints.up("lg"));
+  const isLargeScreen = useMediaQuery(themeDefault().breakpoints.up("lg"));
 
   const handleListItemClick = (
     _event: React.MouseEvent<HTMLDivElement, MouseEvent>,
@@ -51,7 +51,7 @@ const NavBar = () => {
               padding: "11px 8px 11px",
               fontSize: "14px",
               gap: "14px",
-              color: themeDefault.palette.primary.contrastText,
+              color: themeDefault().palette.primary.contrastText,
             }}
             selected={selectedIndex === indexKey}
             onClick={(event) => handleListItemClick(event, indexKey)}
@@ -63,7 +63,7 @@ const NavBar = () => {
                   flex={1}
                   color={
                     selectedIndex === indexKey
-                      ? themeDefault.palette.common.white
+                      ? themeDefault().palette.common.white
                       : "unset"
                   }
                 >
@@ -76,7 +76,7 @@ const NavBar = () => {
                     height: "20px",
                     color:
                       selectedIndex === indexKey
-                        ? themeDefault.palette.common.white
+                        ? themeDefault().palette.common.white
                         : "unset",
                   }}
                 />

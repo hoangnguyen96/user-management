@@ -1,12 +1,13 @@
 import {
   ChangeEvent,
+  lazy,
   memo,
   useCallback,
-  useEffect,
   useMemo,
   useState,
   useTransition,
 } from "react";
+import { useMatch } from "react-router-dom";
 import { Box } from "@mui/material";
 
 // Constants
@@ -33,8 +34,9 @@ import {
 // Components
 import HeadingSearch from "../HeadingSearch";
 import ListItemProduct from "./ListItemProduct";
-import { useMatch } from "react-router-dom";
-import ModalCreateProduct from "../Modal/ModalCreateProduct";
+import { useThemeContext } from "@app/contexts";
+
+const ModalCreateProduct = lazy(() => import("../Modal/ModalCreateProduct"));
 
 interface ListProductContentProps {
   isAdmin?: boolean;
@@ -45,10 +47,10 @@ const ListProductContent = ({
   isAdmin = false,
   id,
 }: ListProductContentProps) => {
+  const { isDarkModeGlobal } = useThemeContext();
   const [isOpenModalCreateProduct, setIsOpenModalCreateProduct] =
     useState<boolean>(false);
   const [pagination, setPagination] = useState<number>(0);
-  const [listPage, setListPage] = useState<Product[][]>([]);
   const [textSearch, setTextSearch] = useState<string>("");
   const [filterText, setFilterText] = useState<string>("");
   const [isPending, startTransition] = useTransition();
@@ -81,36 +83,23 @@ const ListProductContent = ({
     return errorGetList || productListData.length <= 0 ? [] : productListData;
   }, [isAdmin, productListData, productListOfUser]);
 
-  // Search Bar
-  useEffect(() => {
-    if (!isLoadingListAll) {
-      if (filterText) {
-        const listByName = filterListProductByName(productList, filterText);
-        const filteredList = dividePaginationProduct(listByName);
-        setListPage(filteredList);
-      } else {
-        const list = dividePaginationProduct(productList);
-        setListPage(list);
-      }
-    }
-  }, [filterText]);
+  const sortedAndFilteredProducts = useMemo(() => {
+    let list = productList;
 
-  // Selection Bar
-  useEffect(() => {
-    if (!isLoadingListAll) {
-      const sortedProductList = sortProductList(productList, selectionValue);
-      if (sortedProductList.length > 0) {
-        const list = dividePaginationProduct(sortedProductList);
-        setListPage(list);
-      }
+    if (filterText) {
+      list = filterListProductByName(list, filterText);
     }
-  }, [selectionValue]);
 
-  // Reset list
-  useEffect(() => {
-    const listAll = dividePaginationProduct(productList);
-    setListPage(listAll);
-  }, [isLoadingListAll, isLoadingListOfUser, productList]);
+    if (selectionValue !== "name") {
+      list = sortProductList(list, selectionValue);
+    }
+
+    return list;
+  }, [productList, filterText, selectionValue]);
+
+  const listPage = useMemo(() => {
+    return dividePaginationProduct(sortedAndFilteredProducts);
+  }, [sortedAndFilteredProducts]);
 
   const handleChangePagination = useCallback(
     (_event: ChangeEvent<unknown>, value: number) => {
@@ -162,7 +151,7 @@ const ListProductContent = ({
       <Box
         sx={{
           borderRadius: "24px",
-          backgroundColor: "white",
+          backgroundColor: isDarkModeGlobal ? "black" : "white",
           boxShadow: "1px 1px 2px #cccccc",
         }}
       >
@@ -171,17 +160,17 @@ const ListProductContent = ({
           subTitle="Active Product"
           isProduct={isMatchProduct}
           textSearch={textSearch}
+          backgroundColor={isDarkModeGlobal ? "#1a1a1a" : "#f9fbff"}
           list={SORT_DATA_PRODUCT}
           handleOnChangeText={handleOnChangeText}
           onOpenModalProduct={handleOpenModalCreateProduct}
           setSelectionValue={setSelectionValue}
-          setTextSearch={setTextSearch}
         />
 
         {/* List */}
         <ListItemProduct
           isAdmin={isAdmin}
-          isLoading={isLoadingListAll}
+          isLoading={isLoadingListAll || isLoadingListOfUser}
           isPending={isPending}
           userId={id}
           listCurrent={currentPageData}

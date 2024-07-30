@@ -6,7 +6,7 @@ exports[`Temporary component Should render snapshot correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiBox-root css-i2vyv1"
+        class="MuiStack-root css-cvec6f-MuiStack-root"
       >
         <h5
           class="MuiTypography-root MuiTypography-h5 css-1via0ps-MuiTypography-root"
@@ -17,7 +17,7 @@ exports[`Temporary component Should render snapshot correctly 1`] = `
           class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
         />
         <span
-          class="MuiTypography-root MuiTypography-caption css-1f2ugsa-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-1uqj4at-MuiTypography-root"
         >
           Page Temporary
         </span>
@@ -26,7 +26,7 @@ exports[`Temporary component Should render snapshot correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiBox-root css-i2vyv1"
+      class="MuiStack-root css-cvec6f-MuiStack-root"
     >
       <h5
         class="MuiTypography-root MuiTypography-h5 css-1via0ps-MuiTypography-root"
@@ -37,7 +37,7 @@ exports[`Temporary component Should render snapshot correctly 1`] = `
         class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
       />
       <span
-        class="MuiTypography-root MuiTypography-caption css-1f2ugsa-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-caption css-1uqj4at-MuiTypography-root"
       >
         Page Temporary
       </span>

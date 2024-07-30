@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [react(), EnvironmentPlugin("all")],
   resolve: {
     alias: {
+      "@app/contexts": path.resolve(__dirname, "src/libs/Contexts/index.tsx"),
       "@app/pages": path.resolve(__dirname, "src/libs/pages"),
       "@app/api": path.resolve(__dirname, "src/libs/api"),
       "@app/constants": path.resolve(__dirname, "src/libs/constants"),

@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 
 // Models
-import { Product, ProductInit } from "@app/models";
+import { Product } from "@app/models";
 
 // Components
 import ModalBase from "../ModalBase";
@@ -27,12 +27,12 @@ const ModalUpdateProduct = ({
   const { id, userId } = itemUpdate;
 
   const handleSubmit = useCallback(
-    (values: Partial<ProductInit>) => {
+    (values: Partial<Product>) => {
       const payload: Partial<Product> = {
         ...values,
         name: values.name,
-        price: parseInt(values.price || "0"),
-        quantity: parseInt(values.quantity || "0"),
+        price: Number(values.price) || 0,
+        quantity: Number(values.quantity) || 0,
       };
 
       onSubmit(id as string, userId as string, payload);

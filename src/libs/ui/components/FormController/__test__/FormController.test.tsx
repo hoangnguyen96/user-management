@@ -4,16 +4,19 @@ import { fireEvent } from "@testing-library/react";
 // Models
 import { UserResponse } from "@app/models";
 
+// Utils
+import * as utils from "@app/utils";
+
 // Component
 import FormController from "..";
 
 // Mock utils
 jest.mock("@app/utils", () => ({
   clearErrorOnChange: jest.fn(),
-  isEnableSubmitButton: jest.fn().mockReturnValue(true),
   validatePhoneNumber: jest.fn().mockReturnValue(true),
   validateRegExpFormat: jest.fn().mockReturnValue(true),
   validateRequired: jest.fn().mockReturnValue(true),
+  isEnableSubmitButton: jest.fn(),
 }));
 
 describe("FormProduct component", () => {
@@ -41,6 +44,7 @@ describe("FormProduct component", () => {
   });
 
   it("Should render snapshot correctly", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(false);
     expect(
       renderWithQueryClient(<FormController {...props} />)
     ).toMatchSnapshot();
@@ -107,5 +111,58 @@ describe("FormProduct component", () => {
     fireEvent(phoneNumberInput, event);
 
     expect(preventDefaultSpy).toHaveBeenCalled();
+  });
+
+  it("Should disables the submit button initially when required fields are not filled", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(false);
+    const { getByTestId } = renderWithQueryClient(
+      <FormController {...props} itemUpdate={{}} />
+    );
+
+    expect(getByTestId("button-sign-up")).toBeDisabled();
+  });
+
+  it("Should enables the submit button when required fields are filled", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+    const { getByTestId } = renderWithQueryClient(
+      <FormController {...props} />
+    );
+
+    expect(getByTestId("button-update")).toBeEnabled();
+  });
+
+  it("Should calls onSubmit handler on form submit", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+
+    const { getByPlaceholderText, getByTestId, getByText } =
+      renderWithQueryClient(<FormController {...props} />);
+
+    const fullNameInput = getByPlaceholderText("fullName");
+    fireEvent.change(fullNameInput, { target: { value: "Jane Doe" } });
+
+    fireEvent.click(getByTestId("button-update"));
+
+    expect(getByText("Update")).toBeInTheDocument();
+  });
+
+  it("Should clears errors when changing input values", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+    const mockedClearErrorOnChange =
+      utils.clearErrorOnChange as jest.MockedFunction<
+        typeof utils.clearErrorOnChange
+      >;
+
+    const { getByPlaceholderText } = renderWithQueryClient(
+      <FormController {...props} />
+    );
+
+    const fullNameInput = getByPlaceholderText("fullName");
+    fireEvent.change(fullNameInput, { target: { value: "Jane Hoe" } });
+
+    expect(mockedClearErrorOnChange).toHaveBeenCalledWith(
+      "fullName",
+      {},
+      expect.any(Function)
+    );
   });
 });

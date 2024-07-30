@@ -15,28 +15,42 @@ interface SelectionProps {
     value: string;
     name: string;
   }[];
-  setTextSearch?: Dispatch<SetStateAction<string>>;
+  backgroundColor?: string;
   setSelectionValue?: Dispatch<SetStateAction<string>>;
 }
 
 export const Selection = memo(
-  ({ list, setSelectionValue, setTextSearch }: SelectionProps) => {
+  ({ list, backgroundColor, setSelectionValue }: SelectionProps) => {
     const [valueSelection, setValueSelection] = useState(list[0].value);
 
     const handleChange = (event: SelectChangeEvent) => {
       const value = event.target.value;
-      setValueSelection(value);
-      setTextSearch?.("");
-      setSelectionValue?.(value);
+      const selectedIndex = list.findIndex((item) => item.value === value);
+
+      setValueSelection(list[selectedIndex].value);
+      setSelectionValue?.(list[selectedIndex].value);
     };
 
     return (
-      <FormControl sx={{ width: "190px", maxWidth: "100%" }}>
-        <InputLabel id="demo-simple-select-label">Short by:</InputLabel>
+      <FormControl
+        sx={{
+          width: "190px",
+          maxWidth: "100%",
+          backgroundColor: backgroundColor,
+        }}
+      >
+        <InputLabel id="demo-simple-select-label" variant="standard">
+          Short by:
+        </InputLabel>
         <Select
           data-testid="change-selection"
           labelId="demo-simple-select-label"
           id="demo-simple-select"
+          sx={{
+            "& fieldset": {
+              border: "none",
+            },
+          }}
           value={valueSelection}
           IconComponent={KeyboardArrowDownIcon}
           onChange={handleChange}

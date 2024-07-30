@@ -1,8 +1,4 @@
-import { useCallback } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-
-// Constants
-import { LOCAL_STORAGE } from "@app/constants";
 
 // Stores
 import { useAuthStore } from "@app/stores";
@@ -16,16 +12,10 @@ export const useAuth = () => {
   // Auth
   const clearAuth = useAuthStore((state) => state.clearAuth);
 
-  const removeAuthLocal = useCallback(
-    () => localStorage.removeItem(LOCAL_STORAGE.AUTH),
-    []
-  );
-
   // Logout
-  const { mutate: logOut } = useAuthLogout(removeAuthLocal);
+  const { mutate: logOut } = useAuthLogout(clearAuth);
 
   const handleLogout = () => {
-    clearAuth();
     logOut();
     queryClient.clear();
   };

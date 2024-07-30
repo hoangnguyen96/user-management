@@ -1,27 +1,34 @@
 import { memo } from "react";
-import { Box, Divider, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
+import { useThemeContext } from "@app/contexts";
 
 interface TemporaryProps {
   title: string;
 }
 
-const Temporary = ({ title }: TemporaryProps) => (
-  <Box
-    sx={{
-      position: "absolute",
-      top: "40%",
-      textAlign: "center",
-      left: { xs: "40%", sm: "45%", lg: "55%" },
-    }}
-  >
-    <Typography variant="h5" mb="10px" textTransform="uppercase">
-      Coming soon
-    </Typography>
-    <Divider orientation="horizontal" flexItem />
-    <Typography variant="caption" fontWeight="normal">
-      {title}
-    </Typography>
-  </Box>
-);
+const Temporary = ({ title }: TemporaryProps) => {
+  const { isDarkModeGlobal } = useThemeContext();
 
+  return (
+    <Stack
+      sx={{
+        width: "100%",
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: "24px",
+        boxShadow: "1px 1px 2px #cccccc",
+        backgroundColor: isDarkModeGlobal ? "black" : "white",
+      }}
+    >
+      <Typography variant="h5" mb="10px" textTransform="uppercase">
+        Coming soon
+      </Typography>
+      <Divider orientation="horizontal" flexItem />
+      <Typography variant="caption" fontWeight="normal">
+        {title}
+      </Typography>
+    </Stack>
+  );
+};
 export default memo(Temporary);

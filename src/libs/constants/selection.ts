@@ -1,10 +1,6 @@
 export const SORT_DATA_CUSTOMERS = [
   {
-    value: "default",
-    name: "-select-",
-  },
-  {
-    value: "name",
+    value: "fullName",
     name: "Name",
   },
   {
@@ -12,7 +8,7 @@ export const SORT_DATA_CUSTOMERS = [
     name: "Company",
   },
   {
-    value: "phone",
+    value: "phoneNumber",
     name: "Phone",
   },
   {
@@ -26,10 +22,6 @@ export const SORT_DATA_CUSTOMERS = [
 ];
 
 export const SORT_DATA_PRODUCT = [
-  {
-    value: "default",
-    name: "-select-",
-  },
   {
     value: "name",
     name: "Name",

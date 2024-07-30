@@ -1,4 +1,11 @@
-import { ChangeEvent, memo, useCallback, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  lazy,
+  memo,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import { Avatar, Box, Divider, Stack, Typography } from "@mui/material";
 
 // Constants
@@ -18,9 +25,10 @@ import { Product } from "@app/models";
 import HeadingProduct from "./HeadingProduct";
 import PaginationBase from "../PaginationBase";
 import LoadingIndicator from "../LoadingIndicator";
-import ModalUpdateProduct from "../Modal/ModalUpdateProduct";
 import MenuBar from "../MenuBar";
-import ModalDeleteProduct from "../Modal/ModalDeleteProduct";
+
+const ModalUpdateProduct = lazy(() => import("../Modal/ModalUpdateProduct"));
+const ModalDeleteProduct = lazy(() => import("../Modal/ModalDeleteProduct"));
 
 interface ListItemProductProps {
   isLoading: boolean;

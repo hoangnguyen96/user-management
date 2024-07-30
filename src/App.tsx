@@ -1,7 +1,6 @@
 import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 
 // Constants
 import { PUBLIC_ROUTE } from "./routes/public-routes";
@@ -11,8 +10,8 @@ import { DELAY_TIME_API, ROUTES, STALE_TIME_API } from "@app/constants";
 import RouteAuthenticated from "./routes/RouteAuthenticated";
 import { DASHBOARD_ROUTE } from "./routes/dashboard-routes";
 
-// Themes
-import { themeDefault } from "./libs/ui/themes";
+// Contexts
+import ThemeContextApp from "./libs/Contexts";
 
 // Components
 import { BaseLayout } from "@app/ui/layouts";
@@ -36,22 +35,34 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <ThemeProvider theme={themeDefault}>
-          <CssBaseline />
-          <>
-            <Routes>
-              <Route>
+        <ThemeContextApp>
+          <Routes>
+            <Route>
+              <Route
+                path={ROUTES.LANDING_PAGE}
+                element={
+                  <Suspense fallback={<LazyFallbackContent />}>
+                    <LandingPage />
+                  </Suspense>
+                }
+              />
+            </Route>
+            <Route>
+              {PUBLIC_ROUTE.map(({ path, Component }) => (
                 <Route
-                  path={ROUTES.LANDING_PAGE}
+                  key={path}
+                  path={path}
                   element={
                     <Suspense fallback={<LazyFallbackContent />}>
-                      <LandingPage />
+                      <Component />
                     </Suspense>
                   }
                 />
-              </Route>
-              <Route>
-                {PUBLIC_ROUTE.map(({ path, Component }) => (
+              ))}
+            </Route>
+            <Route element={<RouteAuthenticated />}>
+              <Route element={<BaseLayout />}>
+                {DASHBOARD_ROUTE.map(({ path, Component }) => (
                   <Route
                     key={path}
                     path={path}
@@ -63,24 +74,9 @@ function App() {
                   />
                 ))}
               </Route>
-              <Route element={<RouteAuthenticated />}>
-                <Route element={<BaseLayout />}>
-                  {DASHBOARD_ROUTE.map(({ path, Component }) => (
-                    <Route
-                      key={path}
-                      path={path}
-                      element={
-                        <Suspense fallback={<LazyFallbackContent />}>
-                          <Component />
-                        </Suspense>
-                      }
-                    />
-                  ))}
-                </Route>
-              </Route>
-            </Routes>
-          </>
-        </ThemeProvider>
+            </Route>
+          </Routes>
+        </ThemeContextApp>
       </BrowserRouter>
     </QueryClientProvider>
   );

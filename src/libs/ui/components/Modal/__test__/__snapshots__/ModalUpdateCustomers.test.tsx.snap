@@ -31,7 +31,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
       >
         <div
           aria-labelledby=":r0:"
-          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm css-15jjlmt-MuiPaper-root-MuiDialog-paper"
+          class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation24 MuiDialog-paper MuiDialog-paperScrollPaper MuiDialog-paperWidthSm css-gputa0-MuiPaper-root-MuiDialog-paper"
           role="dialog"
         >
           <h2
@@ -42,6 +42,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
           </h2>
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-15cch7k-MuiButtonBase-root-MuiButton-root"
+            data-testid="close-modal-button"
             tabindex="0"
             type="button"
           >
@@ -64,7 +65,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
             class="MuiDialogContent-root css-ypiqx9-MuiDialogContent-root"
           >
             <div
-              class="MuiFormControl-root css-bcsigr-MuiFormControl-root"
+              class="MuiFormControl-root css-e3ss4v-MuiFormControl-root"
             >
               <div
                 class="MuiStack-root css-1l4xmop-MuiStack-root"
@@ -81,7 +82,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
                     class="MuiStack-root css-aubdti-MuiStack-root"
                   >
                     <div
-                      class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                      class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                       data-testid="full-name"
                     >
                       <div
@@ -126,7 +127,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
                     class="MuiStack-root css-aubdti-MuiStack-root"
                   >
                     <div
-                      class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                      class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                       data-testid="company-customer"
                     >
                       <div
@@ -171,7 +172,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
                     class="MuiStack-root css-aubdti-MuiStack-root"
                   >
                     <div
-                      class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                      class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                       data-testid="phone-number"
                     >
                       <div
@@ -217,7 +218,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
                     class="MuiStack-root css-aubdti-MuiStack-root"
                   >
                     <div
-                      class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                      class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                       data-testid="email"
                     >
                       <div
@@ -262,7 +263,7 @@ exports[`ModalUpdateCustomers component Should render snapshot correctly 1`] = `
                     class="MuiStack-root css-aubdti-MuiStack-root"
                   >
                     <div
-                      class="MuiFormControl-root MuiTextField-root css-1fihxl0-MuiFormControl-root-MuiTextField-root"
+                      class="MuiFormControl-root MuiTextField-root css-mzr8ih-MuiFormControl-root-MuiTextField-root"
                       data-testid="country-customer"
                     >
                       <div

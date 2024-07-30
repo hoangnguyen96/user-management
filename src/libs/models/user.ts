@@ -13,10 +13,9 @@ export interface User {
 
 export interface AuthUser {
   id: string;
-  username: string;
-  password: string;
   fullName: string;
   company: string;
+  token: string;
 }
 
 export interface UserResponse extends User {
@@ -32,3 +31,5 @@ export interface UserPayload {
 export interface ApiResponse {
   message: string;
 }
+
+export type LoginCredentials = Pick<UserResponse, "username" | "password">;

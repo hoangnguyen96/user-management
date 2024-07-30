@@ -42,11 +42,11 @@ const DashboardLayout = ({ children, onNavigate }: DashboardLayoutProps) => (
         flex={1}
         sx={{
           height: "100%",
-          backgroundColor: themeDefault.palette.secondary.main,
+          backgroundColor: themeDefault().palette.secondary.main,
           padding: { xs: "40px 20px 80px 20px", md: "40px 95px 80px 70px" },
         }}
       >
-        <Box>{children}</Box>
+        <Box height="100%">{children}</Box>
       </Stack>
     </Stack>
   </Container>

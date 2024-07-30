@@ -11,7 +11,6 @@ import { HttpClient } from "@app/services";
 
 export const useGetListProduct = () => {
   const { data, error, ...rest } = useQuery<Product[], Error>({
-    enabled: true,
     queryKey: [QUERY_KEY.PRODUCT_LIST],
     queryFn: async () =>
       await HttpClient.get<Product[]>(`/${ENDPOINTS.PRODUCT}`),
@@ -26,7 +25,6 @@ export const useGetListProduct = () => {
 
 export const useGetListProductOfUser = (userId: string) => {
   const { data, error, ...rest } = useQuery<Product[], Error>({
-    enabled: true,
     queryKey: [QUERY_KEY.PRODUCT_LIST_OF_USER],
     queryFn: async () =>
       await HttpClient.get<Product[]>(

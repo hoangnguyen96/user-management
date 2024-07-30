@@ -12,10 +12,10 @@ interface HeadingSearchProps {
     name: string;
   }[];
   isProduct?: boolean;
-  handleOnChangeText?: (e: ChangeEvent<HTMLInputElement>) => void;
+  backgroundColor?: string;
+  handleOnChangeText: (e: ChangeEvent<HTMLInputElement>) => void;
   onOpenModalProduct?: () => void;
   setSelectionValue: Dispatch<SetStateAction<string>>;
-  setTextSearch: Dispatch<SetStateAction<string>>;
 }
 
 const HeadingSearch = ({
@@ -23,11 +23,11 @@ const HeadingSearch = ({
   subTitle,
   textSearch,
   list,
+  backgroundColor,
   isProduct = false,
   handleOnChangeText,
   onOpenModalProduct,
   setSelectionValue,
-  setTextSearch,
 }: HeadingSearchProps) => (
   <Stack
     flexDirection="row"
@@ -47,15 +47,19 @@ const HeadingSearch = ({
       justifyContent="space-between"
       gap="16px"
     >
-      <SearchBar value={textSearch} onChange={handleOnChangeText} />
+      <SearchBar
+        value={textSearch}
+        backgroundSearch={backgroundColor}
+        onChange={handleOnChangeText}
+      />
       <Selection
         list={list}
+        backgroundColor={backgroundColor}
         setSelectionValue={setSelectionValue}
-        setTextSearch={setTextSearch}
       />
       {isProduct && (
         <Button
-          data-testid="add-product"
+          data-testid="modal-add-product"
           variant="contained"
           label="Add"
           onClick={onOpenModalProduct}

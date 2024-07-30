@@ -10,7 +10,7 @@ import { ThemeProvider } from "@mui/material";
 import { themeDefault } from "./themes";
 
 const AllTheProviders = ({ children }: PropsWithChildren) => {
-  return <ThemeProvider theme={themeDefault}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={themeDefault()}>{children}</ThemeProvider>;
 };
 
 export const wrapper = ({ children }: { children: ReactNode }) => {
@@ -23,7 +23,7 @@ export const wrapper = ({ children }: { children: ReactNode }) => {
   });
 
   return (
-    <ThemeProvider theme={themeDefault}>
+    <ThemeProvider theme={themeDefault()}>
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     </ThemeProvider>
   );

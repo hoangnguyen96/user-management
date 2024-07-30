@@ -51,7 +51,7 @@ describe("ListCustomersContent component", () => {
 
   it("Should render snapshot correctly", () => {
     expect(
-      renderWithQueryClient(<ListCustomersContent isAdmin={true} id="1" />)
+      renderWithQueryClient(<ListCustomersContent id="1" />)
     ).toMatchSnapshot();
   });
 
@@ -66,5 +66,39 @@ describe("ListCustomersContent component", () => {
     await waitFor(() => {
       expect(input.value).toBe("John");
     });
+  });
+
+  it("Should handle change pagination correctly", () => {
+    const { getByRole } = renderWithQueryClient(
+      <ListCustomersContent isAdmin={true} id="1" />
+    );
+    const paginationButton = getByRole("button", { name: "Go to page 2" });
+    fireEvent.click(paginationButton);
+
+    expect(paginationButton).toBeInTheDocument();
+  });
+
+  it("Should handle filters customer list", () => {
+    const { getByPlaceholderText, getByText } = renderWithQueryClient(
+      <ListCustomersContent isAdmin={true} id="1" />
+    );
+    const input = getByPlaceholderText("Search…");
+    fireEvent.change(input, { target: { value: "Jane" } });
+    expect(getByText("Jane Cooper")).toBeInTheDocument();
+  });
+
+  it("Should handle sorted for selection list", async () => {
+    const { getByLabelText, getByText, getByRole } = renderWithQueryClient(
+      <ListCustomersContent isAdmin={true} id="1" />
+    );
+
+    fireEvent.mouseDown(getByLabelText(/short by:/i));
+
+    await waitFor(() => getByRole("listbox"));
+
+    const newOption = getByText("Phone");
+    fireEvent.click(newOption);
+
+    expect(newOption).toBeInTheDocument();
   });
 });

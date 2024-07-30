@@ -17,7 +17,7 @@ exports[`NotFoundPage component Should render snapshot correctly 1`] = `
           class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
         />
         <span
-          class="MuiTypography-root MuiTypography-caption css-1sl5ozi-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-1i2c2q1-MuiTypography-root"
         >
           Page not found. Please try again later or contact our team for further support.
         </span>
@@ -37,7 +37,7 @@ exports[`NotFoundPage component Should render snapshot correctly 1`] = `
         class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
       />
       <span
-        class="MuiTypography-root MuiTypography-caption css-1sl5ozi-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-caption css-1i2c2q1-MuiTypography-root"
       >
         Page not found. Please try again later or contact our team for further support.
       </span>

@@ -56,7 +56,7 @@ const ListCustomersContent = () => {
           justifyContent="space-between"
           gap="16px"
         >
-          <SearchBar />
+          <SearchBar value="" onChange={() => {}} />
           <Selection list={SORT_DATA_CUSTOMERS} />
         </Stack>
       </Stack>

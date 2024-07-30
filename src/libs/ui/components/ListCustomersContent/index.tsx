@@ -2,7 +2,6 @@ import {
   ChangeEvent,
   memo,
   useCallback,
-  useEffect,
   useMemo,
   useState,
   useTransition,
@@ -28,6 +27,7 @@ import {
 // Components
 import ListItemCustomers from "./ListItemCustomers";
 import HeadingSearch from "../HeadingSearch";
+import { useThemeContext } from "@app/contexts";
 
 interface ListCustomersContentProps {
   isAdmin?: boolean;
@@ -38,8 +38,8 @@ const ListCustomersContent = ({
   isAdmin = false,
   id,
 }: ListCustomersContentProps) => {
+  const { isDarkModeGlobal } = useThemeContext();
   const [pagination, setPagination] = useState<number>(0);
-  const [listPage, setListPage] = useState<UserResponse[][]>([]);
   const [textSearch, setTextSearch] = useState<string>("");
   const [filterText, setFilterText] = useState<string>("");
   const [isPending, startTransition] = useTransition();
@@ -67,40 +67,26 @@ const ListCustomersContent = ({
       : customersListData;
   }, [isAdmin, customersListData, customersListDataById]);
 
-  // Search Bar
-  useEffect(() => {
+  const sortedAndFilteredCustomers = useMemo(() => {
+    let list = customersList;
+
     if (filterText) {
-      const listByName = filterListCustomersByName(customersList, filterText);
-      const list = dividePaginationCustomers(listByName);
-
-      return setListPage(list);
+      list = filterListCustomersByName(list, filterText);
     }
 
-    const listAll = dividePaginationCustomers(customersList);
-    return setListPage(listAll);
-  }, [filterText]);
-
-  // Selection Bar
-  useEffect(() => {
-    if (selectionValue !== "default") {
-      const sortedCustomersList = sortCustomersList(
-        customersList,
-        selectionValue
+    if (selectionValue !== "fullName") {
+      list = sortCustomersList(
+        list,
+        selectionValue as keyof Omit<UserResponse, "status" | "id">
       );
-
-      const list = dividePaginationCustomers(sortedCustomersList);
-      return setListPage(list);
     }
 
-    const listAll = dividePaginationCustomers(customersList);
-    return setListPage(listAll);
-  }, [selectionValue]);
+    return list;
+  }, [customersList, filterText, selectionValue]);
 
-  // Reset List all
-  useEffect(() => {
-    const listAll = dividePaginationCustomers(customersList);
-    setListPage(listAll);
-  }, [isLoadingListAll, isLoadingListById, customersList]);
+  const listPage = useMemo(() => {
+    return dividePaginationCustomers(sortedAndFilteredCustomers);
+  }, [sortedAndFilteredCustomers]);
 
   const handleChangePagination = useCallback(
     (_event: ChangeEvent<unknown>, value: number) => {
@@ -126,7 +112,7 @@ const ListCustomersContent = ({
     <Box
       sx={{
         borderRadius: "24px",
-        backgroundColor: "white",
+        backgroundColor: isDarkModeGlobal ? "black" : "white",
         boxShadow: "1px 1px 2px #cccccc",
       }}
     >
@@ -134,16 +120,16 @@ const ListCustomersContent = ({
         title="All Customers"
         subTitle="Active Members"
         textSearch={textSearch}
+        backgroundColor={isDarkModeGlobal ? "#1a1a1a" : "#f9fbff"}
         list={SORT_DATA_CUSTOMERS}
         handleOnChangeText={handleOnChangeText}
         setSelectionValue={setSelectionValue}
-        setTextSearch={setTextSearch}
       />
 
       {/* List */}
       <ListItemCustomers
         isAdmin={isAdmin}
-        isLoading={isLoadingListAll}
+        isLoading={isLoadingListAll || isLoadingListById}
         isPending={isPending}
         listCurrent={currentPageData}
         listPage={listPage}

@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { lazy, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Box, Divider, Stack, Typography } from "@mui/material";
 
@@ -15,7 +15,11 @@ import { UserResponse } from "@app/models";
 import { customUsername } from "@app/utils";
 
 // Components
-import { FormController, ModalCreateUserSuccess } from "@app/ui/components";
+import { ErrorBoundary, FormController } from "@app/ui/components";
+
+const ModalCreateUserSuccess = lazy(
+  () => import("@app/ui/components/Modal/ModalCreateUserSuccess")
+);
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -39,17 +43,17 @@ const SignUpPage = () => {
   );
 
   const handleSubmit = useCallback((values: Partial<UserResponse>) => {
-    let name = customUsername(values.fullName, values.phoneNumber);
+    const { fullName, phoneNumber, company, country, email } = values;
 
     const payload: Partial<UserResponse> = {
       ...values,
       role: USER_ROLE.CONSUMER,
-      fullName: values.fullName,
-      company: values.company,
-      phoneNumber: values.phoneNumber,
-      email: values.email,
-      country: values.country,
-      username: name,
+      fullName: fullName,
+      company: company,
+      phoneNumber: phoneNumber,
+      email: email,
+      country: country,
+      username: customUsername(),
       password: "123456",
     };
 
@@ -90,12 +94,20 @@ const SignUpPage = () => {
           <Divider orientation="horizontal" flexItem />
 
           {/* Form SignUp */}
-          <FormController
-            itemUpdate={{}}
-            isLoading={isLoadingCreate}
-            onNavigate={navigate}
-            onSubmit={handleSubmit}
-          />
+          <ErrorBoundary
+            fallback={
+              <Typography>
+                Oops! An error occurred in SignUp component.
+              </Typography>
+            }
+          >
+            <FormController
+              itemUpdate={{}}
+              isLoading={isLoadingCreate}
+              onNavigate={navigate}
+              onSubmit={handleSubmit}
+            />
+          </ErrorBoundary>
         </Box>
       </Stack>
       <ModalCreateUserSuccess

@@ -55,7 +55,18 @@ describe("Footer component", () => {
     expect(queryByText(/Get Pro Now!/i)).toBeInTheDocument();
   });
 
-  it("Should handle click open menu and handle logout", () => {
+  it("Should handle opens and closes menu", () => {
+    useMediaQuery.mockImplementation(() => true);
+    const { getByTestId, getByText } = renderWithQueryClient(<Footer />);
+
+    fireEvent.click(getByTestId("logout-account"));
+
+    expect(getByText("Logout")).toBeInTheDocument();
+
+    fireEvent.click(getByText("Logout"));
+  });
+
+  it("Should calls handleLogoutApp on logout", () => {
     useMediaQuery.mockImplementation(() => true);
     const { getByRole, getByText } = renderWithQueryClient(<Footer />);
 

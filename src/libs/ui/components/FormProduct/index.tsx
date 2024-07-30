@@ -9,7 +9,7 @@ import { Controller, useForm } from "react-hook-form";
 import { FormControl, FormLabel, Stack } from "@mui/material";
 
 // Models
-import { Product, ProductInit, UserResponse } from "@app/models";
+import { Product, UserResponse } from "@app/models";
 
 // Utils
 import {
@@ -29,7 +29,7 @@ interface FormControllerProps {
   isAdmin?: boolean;
   listUser?: UserResponse[];
   itemUpdate: Partial<Product>;
-  onSubmit: (product: Partial<ProductInit>) => void;
+  onSubmit: (product: Partial<Product>) => void;
   onNavigate?: (path: string) => void;
 }
 
@@ -39,12 +39,14 @@ const rules = {
   },
 
   price: {
-    required: validateRequired,
-    priceFormat: (value: string) => validatePrice(value),
+    required: (value: number | null | undefined) =>
+      validateRequired(value?.toString() || null),
+    priceFormat: (value: number) => validatePrice(value),
   },
   quantity: {
-    required: validateRequired,
-    quantityFormat: (value: string) => validateQuantity(value),
+    required: (value: number | null | undefined) =>
+      validateRequired(value?.toString() || null),
+    quantityFormat: (value: number) => validateQuantity(value),
   },
   userId: {
     required: validateRequired,
@@ -65,18 +67,18 @@ const FormController = ({
     ? ["name", "price", "quantity", "useId"]
     : ["name", "quantity", "useId"];
 
-  const formInitData: Partial<ProductInit> = useMemo(
+  const formInitData: Partial<Product> = useMemo(
     () =>
       isAdmin
         ? {
             name: name || "",
-            price: price?.toString() || "",
-            quantity: quantity?.toString() || "",
+            price: price || 0,
+            quantity: quantity || 0,
             userId: userId || "",
           }
         : {
             name: name || "",
-            quantity: quantity?.toString() || "",
+            quantity: quantity || 0,
             userId: userId || "",
           },
     [name, price, quantity, userId]
@@ -88,7 +90,7 @@ const FormController = ({
     handleSubmit: submitLogin,
     formState: { errors, isValid, dirtyFields },
     reset,
-  } = useForm<ProductInit>({
+  } = useForm<Product>({
     mode: "onBlur",
     reValidateMode: "onBlur",
     defaultValues: formInitData,
@@ -196,8 +198,7 @@ const FormController = ({
             rules={{
               validate: {
                 ...rules.price,
-                priceFormat: (value) =>
-                  rules.price.priceFormat(value as string),
+                priceFormat: (value) => rules.price.priceFormat(value),
               },
             }}
             render={({

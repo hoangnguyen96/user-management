@@ -6,40 +6,52 @@ exports[`Dashboard component Should render snapshot correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiBox-root css-i2vyv1"
+        class="MuiBox-root css-irgrw4"
       >
-        <h5
-          class="MuiTypography-root MuiTypography-h5 css-1via0ps-MuiTypography-root"
-        >
-          Coming soon
-        </h5>
-        <hr
-          class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
-        />
         <span
-          class="MuiTypography-root MuiTypography-caption css-1f2ugsa-MuiTypography-root"
+          class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-1b8evyp-MuiCircularProgress-root"
+          role="progressbar"
+          style="width: 40px; height: 40px;"
         >
-          Dashboard
+          <svg
+            class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+            viewBox="22 22 44 44"
+          >
+            <circle
+              class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+              cx="44"
+              cy="44"
+              fill="none"
+              r="20.2"
+              stroke-width="3.6"
+            />
+          </svg>
         </span>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="MuiBox-root css-i2vyv1"
+      class="MuiBox-root css-irgrw4"
     >
-      <h5
-        class="MuiTypography-root MuiTypography-h5 css-1via0ps-MuiTypography-root"
-      >
-        Coming soon
-      </h5>
-      <hr
-        class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-yk10cl-MuiDivider-root"
-      />
       <span
-        class="MuiTypography-root MuiTypography-caption css-1f2ugsa-MuiTypography-root"
+        class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-1b8evyp-MuiCircularProgress-root"
+        role="progressbar"
+        style="width: 40px; height: 40px;"
       >
-        Dashboard
+        <svg
+          class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+          viewBox="22 22 44 44"
+        >
+          <circle
+            class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+            cx="44"
+            cy="44"
+            fill="none"
+            r="20.2"
+            stroke-width="3.6"
+          />
+        </svg>
       </span>
     </div>
   </div>,

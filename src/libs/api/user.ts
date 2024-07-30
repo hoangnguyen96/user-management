@@ -9,9 +9,8 @@ import { UserPayload, UserResponse } from "@app/models";
 // Services
 import { HttpClient } from "@app/services";
 
-export const useGetListCustomers = (enabled = true) => {
+export const useGetListCustomers = () => {
   const { data, error, ...rest } = useQuery<UserResponse[], Error>({
-    enabled,
     queryKey: [QUERY_KEY.CUSTOMERS_LIST],
     queryFn: async () =>
       await HttpClient.get<UserResponse[]>(`/${ENDPOINTS.USER}`),

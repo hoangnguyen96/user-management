@@ -12,7 +12,7 @@ exports[`TitleContent component Should render snapshot correctly 1`] = `
           class="MuiBox-root css-0"
         >
           <h2
-            class="MuiTypography-root MuiTypography-h2 css-u4ofiz-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-h2 css-7yt6p7-MuiTypography-root"
           >
             Hello 
             TitleContent
@@ -52,7 +52,7 @@ exports[`TitleContent component Should render snapshot correctly 1`] = `
               </svg>
             </div>
             <div
-              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-1we4xn-MuiInputBase-root-MuiInput-root"
+              class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-19r5bwq-MuiInputBase-root-MuiInput-root"
             >
               <input
                 aria-label="search"
@@ -75,7 +75,7 @@ exports[`TitleContent component Should render snapshot correctly 1`] = `
         class="MuiBox-root css-0"
       >
         <h2
-          class="MuiTypography-root MuiTypography-h2 css-u4ofiz-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h2 css-7yt6p7-MuiTypography-root"
         >
           Hello 
           TitleContent
@@ -115,7 +115,7 @@ exports[`TitleContent component Should render snapshot correctly 1`] = `
             </svg>
           </div>
           <div
-            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-1we4xn-MuiInputBase-root-MuiInput-root"
+            class="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-colorPrimary css-19r5bwq-MuiInputBase-root-MuiInput-root"
           >
             <input
               aria-label="search"

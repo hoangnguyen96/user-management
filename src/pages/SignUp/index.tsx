@@ -1,6 +1,6 @@
 // Page
 import { SignUpPage } from "@app/pages";
 
-const Login = () => <SignUpPage />;
+const SignUp = () => <SignUpPage />;
 
-export default Login;
+export default SignUp;

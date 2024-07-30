@@ -27,20 +27,20 @@ export const Input = memo(
                 "& fieldset": {
                   borderColor:
                     errorMessage || isInvalid
-                      ? themeDefault.palette.error.main
+                      ? themeDefault().palette.error.main
                       : "#b5b7C0",
                 },
                 "&:hover fieldset": {
                   borderColor:
                     errorMessage || isInvalid
-                      ? themeDefault.palette.error.main
-                      : themeDefault.palette.primary.main,
+                      ? themeDefault().palette.error.main
+                      : themeDefault().palette.primary.main,
                 },
                 "&.Mui-focused fieldset": {
                   borderColor:
                     errorMessage || isInvalid
-                      ? themeDefault.palette.error.main
-                      : themeDefault.palette.primary.main,
+                      ? themeDefault().palette.error.main
+                      : themeDefault().palette.primary.main,
                 },
               },
             }}
@@ -51,7 +51,7 @@ export const Input = memo(
               variant="caption"
               fontSize="12px"
               ml="10px"
-              color={themeDefault.palette.error.main}
+              color={themeDefault().palette.error.main}
             >
               {errorMessage}
             </Typography>

@@ -1,7 +1,7 @@
 import React, { Component, ReactNode } from "react";
-import { Typography } from "@mui/material";
 
 interface ErrorBoundaryProps {
+  fallback: ReactNode;
   children: ReactNode;
 }
 
@@ -15,7 +15,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
     this.state = { hasError: false };
   }
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): ErrorBoundaryState {
     // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
@@ -26,7 +26,8 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
 
   render() {
     if (this.state.hasError) {
-      return <Typography variant="h1">Sorry.. there was an error!</Typography>;
+      // You can render any custom fallback UI
+      return this.props.fallback;
     }
 
     return this.props.children;

@@ -6,6 +6,7 @@ export default {
       useESM: true,
       tsconfig: 'tsconfig.json' // move ts-jest config here
     }],
+    '^.+\\.(ts|tsx)$': 'babel-jest',
   },
   collectCoverage: true,
   coverageDirectory: 'coverage',
@@ -24,5 +25,13 @@ export default {
     '^@app/(.*)$': '<rootDir>/src/libs/$1',
   },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
+  transformIgnorePatterns: [
+    "/node_modules/(?!jose)/"
+  ],
 };

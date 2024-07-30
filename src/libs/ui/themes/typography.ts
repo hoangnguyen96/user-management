@@ -34,6 +34,5 @@ export const typographyBase = {
   caption: {
     fontSize: "14px",
     fontWeight: 500,
-    color: "#292d32",
   },
 };

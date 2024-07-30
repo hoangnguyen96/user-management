@@ -9,11 +9,6 @@ export interface Product {
   code: string;
 }
 
-export type ProductInit = Omit<Product, "price" | "quantity"> & {
-  price?: string;
-  quantity: string;
-};
-
 export interface ProductPayload {
   id?: string;
   userId: string;

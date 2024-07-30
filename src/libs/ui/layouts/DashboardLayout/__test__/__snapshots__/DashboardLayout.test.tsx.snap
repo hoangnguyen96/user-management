@@ -318,6 +318,7 @@ exports[`DashboardLayout component Should render snapshot correctly 1`] = `
               >
                 <div
                   class="MuiStack-root css-rtrdhm-MuiStack-root"
+                  data-testid="logout-account"
                 >
                   <div
                     class="MuiAvatar-root MuiAvatar-circular css-251k5v-MuiAvatar-root"
@@ -336,7 +337,7 @@ exports[`DashboardLayout component Should render snapshot correctly 1`] = `
             class="MuiStack-root css-rwypvn-MuiStack-root"
           >
             <div
-              class="MuiBox-root css-0"
+              class="MuiBox-root css-10klw3m"
             >
               children
             </div>
@@ -659,6 +660,7 @@ exports[`DashboardLayout component Should render snapshot correctly 1`] = `
             >
               <div
                 class="MuiStack-root css-rtrdhm-MuiStack-root"
+                data-testid="logout-account"
               >
                 <div
                   class="MuiAvatar-root MuiAvatar-circular css-251k5v-MuiAvatar-root"
@@ -677,7 +679,7 @@ exports[`DashboardLayout component Should render snapshot correctly 1`] = `
           class="MuiStack-root css-rwypvn-MuiStack-root"
         >
           <div
-            class="MuiBox-root css-0"
+            class="MuiBox-root css-10klw3m"
           >
             children
           </div>

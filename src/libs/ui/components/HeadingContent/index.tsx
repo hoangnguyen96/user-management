@@ -14,9 +14,11 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import { themeDefault } from "../../themes";
 import GroupImages from "./GroupImages";
+import { useThemeContext } from "@app/contexts";
 
 const HeadingContent = () => {
-  const isSmallScreen = useMediaQuery(themeDefault.breakpoints.down("lg"));
+  const isSmallScreen = useMediaQuery(themeDefault().breakpoints.down("lg"));
+  const { isDarkModeGlobal } = useThemeContext();
 
   const LIST_HEADING_CONTENT = [
     {
@@ -34,7 +36,7 @@ const HeadingContent = () => {
           flexDirection="row"
           justifyContent="space-between"
           alignItems="center"
-          gap={themeDefault.spacing(0.25)}
+          gap={themeDefault().spacing(0.25)}
         >
           <SvgIcon component={ArrowUpwardIcon} sx={{ color: "#00ac4f" }} />
           <Typography fontSize="12px">
@@ -61,7 +63,7 @@ const HeadingContent = () => {
           flexDirection="row"
           justifyContent="space-between"
           alignItems="center"
-          gap={themeDefault.spacing(0.25)}
+          gap={themeDefault().spacing(0.25)}
         >
           <SvgIcon component={ArrowDownwardIcon} sx={{ color: "#d0004b" }} />
           <Typography fontSize="12px">
@@ -89,7 +91,7 @@ const HeadingContent = () => {
       sx={{
         flexDirection: "row",
         justifyContent: "space-between",
-        backgroundColor: "white",
+        backgroundColor: isDarkModeGlobal ? "black" : "white",
         borderRadius: "24px",
         marginTop: "40px",
         marginBottom: "40px",
@@ -102,7 +104,7 @@ const HeadingContent = () => {
           <Box key={id}>
             <Stack
               flexDirection="row"
-              gap={themeDefault.spacing(2.5)}
+              gap={themeDefault().spacing(2.5)}
               alignItems="center"
             >
               <Stack
@@ -119,7 +121,7 @@ const HeadingContent = () => {
               >
                 {icon}
               </Stack>
-              <Stack gap={themeDefault.spacing(0.25)}>
+              <Stack gap={themeDefault().spacing(0.25)}>
                 <Typography variant="subtitle2">{title}</Typography>
                 <Typography variant="h3">{quantity}</Typography>
                 {description}

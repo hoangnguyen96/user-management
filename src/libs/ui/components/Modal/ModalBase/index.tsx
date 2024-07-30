@@ -23,6 +23,7 @@ const ModalBase = ({ title, isOpen, children, onClose }: ModalBaseProps) => (
   >
     <DialogTitle textAlign="center">{title}</DialogTitle>
     <Button
+      data-testid="close-modal-button"
       label={<CloseIcon />}
       variant="outlined"
       sx={{

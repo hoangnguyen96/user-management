@@ -24,6 +24,7 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "./",
     "paths": {
+      "@app/contexts": ["src/libs/Contexts/index.tsx"],
       "@app/pages": ["src/libs/pages/index.ts"],
       "@app/api": ["src/libs/api/index.ts"],
       "@app/constants": ["src/libs/constants/index.ts"],

@@ -62,22 +62,22 @@ exports[`HeadingSearch component Should render snapshot correctly 1`] = `
                 class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
                 placeholder="Search…"
                 type="text"
-                value="a"
+                value="search term"
               />
             </div>
           </div>
           <div
-            class="MuiFormControl-root css-2iaed4-MuiFormControl-root"
+            class="MuiFormControl-root css-k23xaq-MuiFormControl-root"
           >
             <label
-              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-wxw8j3-MuiFormLabel-root-MuiInputLabel-root"
+              class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-standard MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-standard css-1bfsyep-MuiFormLabel-root-MuiInputLabel-root"
               data-shrink="true"
               id="demo-simple-select-label"
             >
               Short by:
             </label>
             <div
-              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-cb5d54-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-1q59vsr-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
               data-testid="change-selection"
             >
               <div
@@ -90,14 +90,14 @@ exports[`HeadingSearch component Should render snapshot correctly 1`] = `
                 role="combobox"
                 tabindex="0"
               >
-                -select-
+                Name
               </div>
               <input
                 aria-hidden="true"
                 aria-invalid="false"
                 class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
                 tabindex="-1"
-                value="default"
+                value="fullName"
               />
               <svg
                 aria-hidden="true"
@@ -188,22 +188,22 @@ exports[`HeadingSearch component Should render snapshot correctly 1`] = `
               class="MuiInputBase-input MuiInput-input css-15e8ec1-MuiInputBase-input-MuiInput-input"
               placeholder="Search…"
               type="text"
-              value="a"
+              value="search term"
             />
           </div>
         </div>
         <div
-          class="MuiFormControl-root css-2iaed4-MuiFormControl-root"
+          class="MuiFormControl-root css-k23xaq-MuiFormControl-root"
         >
           <label
-            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-wxw8j3-MuiFormLabel-root-MuiInputLabel-root"
+            class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-standard MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-standard css-1bfsyep-MuiFormLabel-root-MuiInputLabel-root"
             data-shrink="true"
             id="demo-simple-select-label"
           >
             Short by:
           </label>
           <div
-            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-cb5d54-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+            class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl  css-1q59vsr-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
             data-testid="change-selection"
           >
             <div
@@ -216,14 +216,14 @@ exports[`HeadingSearch component Should render snapshot correctly 1`] = `
               role="combobox"
               tabindex="0"
             >
-              -select-
+              Name
             </div>
             <input
               aria-hidden="true"
               aria-invalid="false"
               class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
               tabindex="-1"
-              value="default"
+              value="fullName"
             />
             <svg
               aria-hidden="true"

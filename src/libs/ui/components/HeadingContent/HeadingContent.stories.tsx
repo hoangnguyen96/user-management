@@ -111,7 +111,7 @@ const LIST_HEADING_CONTENT = [
   },
 ];
 
-const Heading = () => (
+export const Heading = () => (
   <Container sx={{ width: "969px" }}>
     <Stack
       sx={{

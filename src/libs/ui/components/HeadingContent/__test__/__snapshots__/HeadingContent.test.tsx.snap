@@ -6,7 +6,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiStack-root css-15fthzu-MuiStack-root"
+        class="MuiStack-root css-1hfxhcu-MuiStack-root"
       >
         <div
           class="MuiBox-root css-0"
@@ -85,7 +85,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
                   class="MuiTypography-root MuiTypography-body1 css-3tka3z-MuiTypography-root"
                 >
                   <span
-                    class="MuiTypography-root MuiTypography-caption css-ueuvyf-MuiTypography-root"
+                    class="MuiTypography-root MuiTypography-caption css-1qc5hdi-MuiTypography-root"
                   >
                     16%
                      
@@ -169,7 +169,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
                   class="MuiTypography-root MuiTypography-body1 css-3tka3z-MuiTypography-root"
                 >
                   <span
-                    class="MuiTypography-root MuiTypography-caption css-msmpvr-MuiTypography-root"
+                    class="MuiTypography-root MuiTypography-caption css-1h0dht4-MuiTypography-root"
                   >
                     1%
                      
@@ -299,7 +299,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiStack-root css-15fthzu-MuiStack-root"
+      class="MuiStack-root css-1hfxhcu-MuiStack-root"
     >
       <div
         class="MuiBox-root css-0"
@@ -378,7 +378,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
                 class="MuiTypography-root MuiTypography-body1 css-3tka3z-MuiTypography-root"
               >
                 <span
-                  class="MuiTypography-root MuiTypography-caption css-ueuvyf-MuiTypography-root"
+                  class="MuiTypography-root MuiTypography-caption css-1qc5hdi-MuiTypography-root"
                 >
                   16%
                    
@@ -462,7 +462,7 @@ exports[`HeadingContent component Should render snapshot correctly 1`] = `
                 class="MuiTypography-root MuiTypography-body1 css-3tka3z-MuiTypography-root"
               >
                 <span
-                  class="MuiTypography-root MuiTypography-caption css-msmpvr-MuiTypography-root"
+                  class="MuiTypography-root MuiTypography-caption css-1h0dht4-MuiTypography-root"
                 >
                   1%
                    

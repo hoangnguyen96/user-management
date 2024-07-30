@@ -6,17 +6,29 @@ import { persist } from "zustand/middleware";
 import { LOCAL_STORAGE } from "@app/constants";
 
 // Models
-import { AuthState, AuthStore } from "@app/models";
+import { AuthUser } from "@app/models";
+
+interface AuthState {
+  isAuthenticated: boolean;
+  isAdmin: boolean;
+  user: AuthUser;
+}
+
+interface AuthStore extends AuthState {
+  setAuthenticated: (isAuthenticated: boolean) => void;
+  setIsAdmin: (isAdmin: boolean) => void;
+  setUser: (user: AuthUser) => void;
+  clearAuth: () => void;
+}
 
 const INITIAL_AUTH_STATE: AuthState = {
   isAuthenticated: false,
   isAdmin: false,
   user: {
     id: "",
-    username: "",
-    password: "",
     fullName: "",
     company: "",
+    token: "",
   },
 };
 

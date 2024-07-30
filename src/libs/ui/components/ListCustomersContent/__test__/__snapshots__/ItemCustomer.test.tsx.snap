@@ -16,27 +16,27 @@ exports[`ItemCustomer component Should render snapshot correctly 1`] = `
           class="MuiStack-root css-1fbemys-MuiStack-root"
         >
           <span
-            class="MuiTypography-root MuiTypography-caption css-bpkql1-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-caption css-2ox5he-MuiTypography-root"
           >
             name
           </span>
           <span
-            class="MuiTypography-root MuiTypography-caption css-e8u01t-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-caption css-wimwns-MuiTypography-root"
           >
             Akida
           </span>
           <span
-            class="MuiTypography-root MuiTypography-caption css-1mngl9u-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-caption css-j54e8y-MuiTypography-root"
           >
             1234567890
           </span>
           <span
-            class="MuiTypography-root MuiTypography-caption css-8zaaww-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-caption css-11u7ibz-MuiTypography-root"
           >
             aki@gmail.com
           </span>
           <span
-            class="MuiTypography-root MuiTypography-caption css-1nl03ot-MuiTypography-root"
+            class="MuiTypography-root MuiTypography-caption css-8yykud-MuiTypography-root"
           >
             Newzilen
           </span>
@@ -102,7 +102,7 @@ exports[`ItemCustomer component Should render snapshot correctly 1`] = `
         tabindex="0"
       />
       <div
-        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper MuiMenu-paper css-1ls49xq-MuiPaper-root-MuiPopover-paper-MuiMenu-paper"
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation8 MuiPopover-paper MuiMenu-paper MuiMenu-paper css-106t6c1-MuiPaper-root-MuiPopover-paper-MuiMenu-paper"
         style="opacity: 1; transform: scale(1, 1); transition: opacity 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,transform 0ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; top: 16px; left: 16px; transform-origin: -16px -16px;"
         tabindex="-1"
       >
@@ -152,27 +152,27 @@ exports[`ItemCustomer component Should render snapshot correctly 1`] = `
         class="MuiStack-root css-1fbemys-MuiStack-root"
       >
         <span
-          class="MuiTypography-root MuiTypography-caption css-bpkql1-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-2ox5he-MuiTypography-root"
         >
           name
         </span>
         <span
-          class="MuiTypography-root MuiTypography-caption css-e8u01t-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-wimwns-MuiTypography-root"
         >
           Akida
         </span>
         <span
-          class="MuiTypography-root MuiTypography-caption css-1mngl9u-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-j54e8y-MuiTypography-root"
         >
           1234567890
         </span>
         <span
-          class="MuiTypography-root MuiTypography-caption css-8zaaww-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-11u7ibz-MuiTypography-root"
         >
           aki@gmail.com
         </span>
         <span
-          class="MuiTypography-root MuiTypography-caption css-1nl03ot-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-caption css-8yykud-MuiTypography-root"
         >
           Newzilen
         </span>

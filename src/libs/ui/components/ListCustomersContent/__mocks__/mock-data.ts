@@ -97,4 +97,16 @@ export const LIST_CONTENT = [
     password: "123456",
     id: "8",
   },
+  {
+    fullName: "Kris Leo",
+    role: USER_ROLE.CONSUMER,
+    company: "Facebook",
+    phoneNumber: "(704) 555-0112",
+    email: "krisleo@facebook.com",
+    country: "Sahara",
+    status: false,
+    username: "consumer7",
+    password: "123456",
+    id: "9",
+  },
 ];

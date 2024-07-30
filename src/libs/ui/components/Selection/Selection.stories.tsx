@@ -19,10 +19,30 @@ const Selection = () => {
 
   return (
     <FormControl>
-      <InputLabel id="demo-simple-select-label">Short by:</InputLabel>
+      <InputLabel
+        id="demo-simple-select-label"
+        sx={{
+          position: "unset",
+          transform: "unset",
+          left: "unset",
+          top: "unset",
+          flex: 0.8,
+          padding: "10px",
+          paddingRight: "5px",
+          fontSize: "12px",
+          textAlign: "right",
+        }}
+      >
+        Short by:
+      </InputLabel>
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
+        sx={{
+          "& fieldset": {
+            border: "none",
+          },
+        }}
         value={value}
         IconComponent={KeyboardArrowDownIcon}
         onChange={handleChange}

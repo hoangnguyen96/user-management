@@ -1,21 +1,15 @@
 import { Product, UserResponse } from "@app/models";
 
-export const sortCustomersList = (data: UserResponse[], sortBy: string) => {
-  switch (sortBy) {
-    case "name":
-      return [...data].sort((a, b) => a.fullName.localeCompare(b.fullName));
-    case "company":
-      return [...data].sort((a, b) => a.company.localeCompare(b.company));
-    case "phone":
-      return [...data].sort((a, b) =>
-        a.phoneNumber.localeCompare(b.phoneNumber)
-      );
-    case "email":
-      return [...data].sort((a, b) => a.email.localeCompare(b.email));
-    case "country":
-      return [...data].sort((a, b) => a.country.localeCompare(b.country));
-    default:
-      return data;
+export const sortCustomersList = (
+  data: UserResponse[],
+  sortBy: keyof Omit<UserResponse, "status" | "id">
+) => {
+  const validKeys = ["fullName", "company", "phoneNumber", "email", "country"];
+
+  if (validKeys.includes(sortBy)) {
+    return [...data].sort((a, b) => a[sortBy].localeCompare(b[sortBy]));
+  } else {
+    return data;
   }
 };
 

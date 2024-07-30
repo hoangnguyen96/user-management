@@ -1,49 +1,35 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import { Typography } from "@mui/material";
 
 // Components
 import ErrorBoundary from "..";
 
+const ThrowError = () => {
+  throw new Error("Test error");
+};
+
 describe("ErrorBoundary", () => {
-  it("renders children when there is no error", () => {
-    render(
-      <ErrorBoundary>
-        <Typography>Child component</Typography>
-      </ErrorBoundary>
-    );
-    expect(screen.getByText("Child component")).toBeInTheDocument();
-  });
-
   it("renders fallback UI when an error is thrown", () => {
-    const ProblemChild = () => {
-      throw new Error("Error thrown from problem child");
-    };
+    const fallbackUI = <div>Something went wrong.</div>;
 
     render(
-      <ErrorBoundary>
-        <ProblemChild />
+      <ErrorBoundary fallback={fallbackUI}>
+        <ThrowError />
       </ErrorBoundary>
     );
 
-    expect(screen.getByText("Sorry.. there was an error!")).toBeInTheDocument();
+    expect(screen.getByText("Something went wrong.")).toBeInTheDocument();
   });
 
-  it("logs error messages to the console", () => {
-    const consoleSpy = jest
-      .spyOn(console, "error")
-      .mockImplementation(() => {});
-    const ProblemChild = () => {
-      throw new Error("Error thrown from problem child");
-    };
+  it("renders children when no error is thrown", () => {
+    const ChildComponent = () => <div>Child component content</div>;
 
     render(
-      <ErrorBoundary>
-        <ProblemChild />
+      <ErrorBoundary fallback={<div>Something went wrong.</div>}>
+        <ChildComponent />
       </ErrorBoundary>
     );
 
-    expect(consoleSpy).toHaveBeenCalled();
-    consoleSpy.mockRestore();
+    expect(screen.getByText("Child component content")).toBeInTheDocument();
   });
 });

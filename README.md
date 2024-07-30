@@ -21,7 +21,7 @@ Author: Hoang Nguyen Van <[hoang.nguyenvan@asnet.com.vn](hoang.nguyenvan@asnet.c
 - [node v20.2.0](https://nodejs.org/en/)
 - [pnpm 7.32.3](https://pnpm.io/)
 
-2. Create a `.env` file and add content to with your configuration: `VITE_APP_BASE_API=https://664ab70ba300e8795d42b37c.mockapi.io/api/v1`
+2. Create a `.env` file and follow the `.env.sample` file.
 
 3. Install all dependencies packages with command at root:
 

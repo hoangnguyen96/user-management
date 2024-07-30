@@ -11,9 +11,10 @@ import {
   Typography,
 } from "@mui/material";
 import { Controller, useForm } from "react-hook-form";
+import { SignJWT } from "jose";
 
 // Constants
-import { ROUTES, USER_ROLE } from "@app/constants";
+import { ROUTES, TOKEN_KEY, USER_ROLE } from "@app/constants";
 
 // Apis
 import { useAuthLogin } from "@app/api";
@@ -32,7 +33,7 @@ import {
 } from "@app/utils";
 
 // Components
-import { Button, Input } from "@app/ui/components";
+import { Button, ErrorBoundary, Input } from "@app/ui/components";
 
 const ValidationRuleLogin = {
   username: {
@@ -80,18 +81,31 @@ const LoginPage = () => {
   const isDisableSubmit = !(shouldEnable || isValid);
 
   const handleLoginSuccess = useCallback(
-    (data: UserResponse) => {
+    async (data: UserResponse) => {
       const { id, username, password, fullName, company, role } = data;
+      let tokenKey = "";
+
+      if (username && password) {
+        try {
+          const secret = new TextEncoder().encode(TOKEN_KEY);
+          tokenKey = await new SignJWT({ username, password })
+            .setProtectedHeader({ alg: "HS256" })
+            .setExpirationTime("1h")
+            .sign(secret);
+        } catch (err) {
+          throw new Error("Failed to generate token");
+        }
+      }
+
       setUser({
         id: id || "",
-        username: username || "",
-        password: password || "",
         fullName: fullName || "",
         company: company || "",
+        token: tokenKey,
       });
       setAuthenticated(true);
       setIsAdmin(role === USER_ROLE.ADMIN);
-      navigate(ROUTES.CUSTOMERS);
+      navigate(ROUTES.DASHBOARD);
     },
     [setAuthenticated, setIsAdmin, setUser]
   );
@@ -157,99 +171,107 @@ const LoginPage = () => {
           <Divider orientation="horizontal" flexItem />
 
           {/* Form controller */}
-          <FormControl
-            onSubmit={submitLogin(handleSubmit)}
-            sx={{
-              width: "100%",
-              backgroundColor: "transparent",
-              flexDirection: "column",
-            }}
+          <ErrorBoundary
+            fallback={
+              <Typography>
+                Oops! An error occurred in Login component.
+              </Typography>
+            }
           >
-            <Stack
+            <FormControl
+              onSubmit={submitLogin(handleSubmit)}
               sx={{
                 width: "100%",
-                maxWidth: "300px",
-                m: "32px auto",
-                gap: "12px",
+                backgroundColor: "transparent",
+                flexDirection: "column",
               }}
             >
-              <Controller
-                name="username"
-                control={control}
-                rules={{
-                  validate: ValidationRuleLogin.username,
+              <Stack
+                sx={{
+                  width: "100%",
+                  maxWidth: "300px",
+                  m: "32px auto",
+                  gap: "12px",
                 }}
-                render={({
-                  field: { onChange, ...rest },
-                  fieldState: { error },
-                }) => (
-                  <Stack
-                    flexDirection="row"
-                    alignItems="flex-start"
-                    justifyContent="space-between"
-                  >
-                    <FormLabel sx={{ mt: "12px" }}>Username:</FormLabel>
-                    <Input
-                      placeholder="username"
-                      isInvalid={!!error?.message}
-                      errorMessage={errors.username?.message}
-                      onChange={(e) => {
-                        onChange(e);
-                        clearErrorOnChange("username", errors, clearErrors);
-                      }}
-                      {...rest}
-                    />
-                  </Stack>
-                )}
-              />
-              <Controller
-                name="password"
-                control={control}
-                rules={{
-                  validate: ValidationRuleLogin.password,
-                }}
-                render={({
-                  field: { onChange, ...rest },
-                  fieldState: { error },
-                }) => (
-                  <Stack
-                    flexDirection="row"
-                    alignItems="flex-start"
-                    justifyContent="space-between"
-                  >
-                    <FormLabel sx={{ mt: "12px" }}>Password:</FormLabel>
-                    <Input
-                      placeholder="password"
-                      type="password"
-                      isInvalid={!!error?.message}
-                      errorMessage={errors.password?.message}
-                      onChange={(e) => {
-                        onChange(e.target.value);
-                        clearErrorOnChange("password", errors, clearErrors);
-                      }}
-                      {...rest}
-                    />
-                  </Stack>
-                )}
-              />
-            </Stack>
+              >
+                <Controller
+                  name="username"
+                  control={control}
+                  rules={{
+                    validate: ValidationRuleLogin.username,
+                  }}
+                  render={({
+                    field: { onChange, ...rest },
+                    fieldState: { error },
+                  }) => (
+                    <Stack
+                      flexDirection="row"
+                      alignItems="flex-start"
+                      justifyContent="space-between"
+                    >
+                      <FormLabel sx={{ mt: "12px" }}>Username:</FormLabel>
+                      <Input
+                        placeholder="username"
+                        isInvalid={!!error?.message}
+                        errorMessage={errors.username?.message}
+                        onChange={(e) => {
+                          onChange(e);
+                          clearErrorOnChange("username", errors, clearErrors);
+                        }}
+                        {...rest}
+                      />
+                    </Stack>
+                  )}
+                />
+                <Controller
+                  name="password"
+                  control={control}
+                  rules={{
+                    validate: ValidationRuleLogin.password,
+                  }}
+                  render={({
+                    field: { onChange, ...rest },
+                    fieldState: { error },
+                  }) => (
+                    <Stack
+                      flexDirection="row"
+                      alignItems="flex-start"
+                      justifyContent="space-between"
+                    >
+                      <FormLabel sx={{ mt: "12px" }}>Password:</FormLabel>
+                      <Input
+                        placeholder="password"
+                        type="password"
+                        isInvalid={!!error?.message}
+                        errorMessage={errors.password?.message}
+                        onChange={(e) => {
+                          onChange(e.target.value);
+                          clearErrorOnChange("password", errors, clearErrors);
+                        }}
+                        {...rest}
+                      />
+                    </Stack>
+                  )}
+                />
+              </Stack>
 
-            {/* Submit form */}
-            <Stack flexDirection="row" justifyContent="center" gap="32px">
-              <Button
-                onClick={handleNavigateHome}
-                variant="outlined"
-                label="Home"
-              />
-              <Button
-                variant="contained"
-                label="Log in"
-                isLoading={isLoadingLogin}
-                disabled={isDisableSubmit}
-                onClick={submitLogin(handleSubmit)}
-              />
-            </Stack>
-          </FormControl>
+              {/* Submit form */}
+              <Stack flexDirection="row" justifyContent="center" gap="32px">
+                <Button
+                  onClick={handleNavigateHome}
+                  variant="outlined"
+                  label="Home"
+                />
+                <Button
+                  variant="contained"
+                  label="Log in"
+                  isLoading={isLoadingLogin}
+                  disabled={isDisableSubmit}
+                  onClick={submitLogin(handleSubmit)}
+                />
+              </Stack>
+            </FormControl>
+          </ErrorBoundary>
         </Box>
       </Stack>
 

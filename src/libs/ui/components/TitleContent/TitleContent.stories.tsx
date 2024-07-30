@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import { SearchBar } from "../Common/SearchBar";
 
-const TitleContent = () => (
+export const TitleContent = () => (
   <Container sx={{ width: "969px" }}>
     <Stack
       flexDirection="row"
@@ -13,7 +13,7 @@ const TitleContent = () => (
         <Typography variant="h2">Hello Enova,</Typography>
       </Box>
       <Box>
-        <SearchBar />
+        <SearchBar value="" onChange={() => {}} />
       </Box>
     </Stack>
   </Container>

@@ -13,5 +13,10 @@ const config: StorybookConfig = {
     name: "@storybook/react-vite",
     options: {},
   },
+  babel: async (options) => ({
+    ...options,
+    presets: [...options.presets, "@babel/preset-react"],
+    plugins: [...options.plugins, "@babel/plugin-syntax-jsx"],
+  }),
 };
 export default config;

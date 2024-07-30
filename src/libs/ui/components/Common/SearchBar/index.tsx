@@ -6,8 +6,8 @@ import { SearchIcon } from "../../../icons";
 
 interface SearchBarProps {
   backgroundSearch?: string;
-  value?: string;
-  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  value: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const SearchBar = memo(

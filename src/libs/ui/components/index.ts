@@ -13,4 +13,5 @@ export { default as NavigationBar } from "./NavigationBar";
 export { default as Temporary } from "./Temporary";
 export { default as TitleContent } from "./TitleContent";
 export { default as MenuBar } from "./MenuBar";
+export { default as ErrorBoundary } from "./ErrorBoundary";
 export { default as ModalCreateUserSuccess } from "./Modal/ModalCreateUserSuccess";

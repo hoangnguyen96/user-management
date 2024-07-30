@@ -30,6 +30,18 @@ jest.mock("@app/api", () => ({
   })),
 }));
 
+// Mock SignJWT
+jest.mock("jose", () => ({
+  SignJWT: jest.fn().mockImplementation(() => ({
+    setProtectedHeader: jest.fn().mockReturnThis(),
+    setSubject: jest.fn().mockReturnThis(),
+    setIssuer: jest.fn().mockReturnThis(),
+    setAudience: jest.fn().mockReturnThis(),
+    setExpirationTime: jest.fn().mockReturnThis(),
+    sign: jest.fn().mockResolvedValue("mocked-token"),
+  })),
+}));
+
 describe("LoginPage component", () => {
   const setUser = jest.fn();
   const setIsAdmin = jest.fn();
@@ -58,8 +70,7 @@ describe("LoginPage component", () => {
     const mockLogin = jest.fn().mockImplementation((_, { onSuccess }) => {
       onSuccess({
         id: "1",
-        username: "testuser",
-        password: "password",
+        token: "",
         fullName: "Test User",
         company: "Test Company",
         role: USER_ROLE.ADMIN,
@@ -87,14 +98,13 @@ describe("LoginPage component", () => {
       expect(mockLogin).toHaveBeenCalled();
       expect(setUser).toHaveBeenCalledWith({
         id: "1",
-        username: "testuser",
-        password: "password",
+        token: "",
         fullName: "Test User",
         company: "Test Company",
       });
       expect(setIsAdmin).toHaveBeenCalledWith(true);
       expect(setAuthenticated).toHaveBeenCalledWith(true);
-      expect(navigate).toHaveBeenCalledWith(ROUTES.CUSTOMERS);
+      expect(navigate).toHaveBeenCalledWith(ROUTES.DASHBOARD);
     });
   });
 

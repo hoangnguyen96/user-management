@@ -1,4 +1,6 @@
-export const colors = {
+import { PaletteMode } from "@mui/material";
+
+export const colors = (mode?: PaletteMode) => ({
   primary: {
     main: "#5932ea",
     contrastText: "#9197b3",
@@ -9,4 +11,5 @@ export const colors = {
   error: {
     main: "#df0404",
   },
-};
+  mode: mode,
+});

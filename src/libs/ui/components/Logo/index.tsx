@@ -14,7 +14,7 @@ import { themeDefault } from "../../themes";
 
 const Logo = () => {
   const navigate = useNavigate();
-  const isLargeScreen = useMediaQuery(themeDefault.breakpoints.up("lg"));
+  const isLargeScreen = useMediaQuery(themeDefault().breakpoints.up("lg"));
 
   // Auth
   const isAuthenticated = useAuthStore((state) => [state.isAuthenticated]);

@@ -91,7 +91,7 @@ interface NavigationBarProps {
 const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
   const [currentStep, setCurrentStep] = useState<string>("");
   const [navigation, setNavigation] = useState(initialNavigation);
-  const isLargeScreen = useMediaQuery(themeDefault.breakpoints.up("lg"));
+  const isLargeScreen = useMediaQuery(themeDefault().breakpoints.up("lg"));
   const location = useLocation();
 
   const handleListItemClick = useCallback(
@@ -142,10 +142,10 @@ const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
               justifyContent: isLargeScreen ? "flex-start" : "center",
               padding: "11px 8px 11px",
               gap: "14px",
-              borderRadius: themeDefault.spacing(1),
+              borderRadius: themeDefault().spacing(1),
               backgroundColor:
                 currentStep === stepDetail.url
-                  ? themeDefault.palette.primary.main
+                  ? themeDefault().palette.primary.main
                   : "unset",
             }}
           >
@@ -156,7 +156,7 @@ const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
                   flex={1}
                   color={
                     currentStep === stepDetail.url
-                      ? themeDefault.palette.common.white
+                      ? themeDefault().palette.common.white
                       : "unset"
                   }
                 >
@@ -170,7 +170,7 @@ const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
                     height: "20px",
                     color:
                       currentStep === stepDetail.url
-                        ? themeDefault.palette.common.white
+                        ? themeDefault().palette.common.white
                         : "unset",
                   }}
                 />

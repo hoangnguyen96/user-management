@@ -1,5 +1,6 @@
 import React, {
   ChangeEvent,
+  lazy,
   memo,
   useCallback,
   useEffect,
@@ -24,10 +25,15 @@ import { UserResponse } from "@app/models";
 import LoadingIndicator from "../LoadingIndicator";
 import HeadingCustomers from "./HeadingCustomers";
 import PaginationBase from "../PaginationBase";
-import ModalUpdateCustomers from "../Modal/ModalUpdateCustomers";
-import ModalDeleteCustomers from "../Modal/ModalDeleteCustomers";
-import ModalActive from "../Modal/ModalActive";
 import ItemCustomer from "./ItemCustomer";
+
+const ModalActive = lazy(() => import("../Modal/ModalActive"));
+const ModalUpdateCustomers = lazy(
+  () => import("../Modal/ModalUpdateCustomers")
+);
+const ModalDeleteCustomers = lazy(
+  () => import("../Modal/ModalDeleteCustomers")
+);
 
 interface ListItemCustomersProps {
   isLoading: boolean;

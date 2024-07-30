@@ -1,13 +1,16 @@
 import { renderWithQueryClient } from "@app/ui/test-utils";
+import { fireEvent } from "@testing-library/react";
+
+// Utils
+import * as utils from "@app/utils";
 
 // Component
 import FormController from "..";
-import { fireEvent } from "@testing-library/react";
 
 // Mock utils
 jest.mock("@app/utils", () => ({
   clearErrorOnChange: jest.fn(),
-  isEnableSubmitButton: jest.fn().mockReturnValue(true),
+  isEnableSubmitButton: jest.fn(),
   validatePrice: jest.fn().mockReturnValue(true),
   validateQuantity: jest.fn().mockReturnValue(true),
   validateRequired: jest.fn().mockReturnValue(true),
@@ -101,5 +104,40 @@ describe("FormProduct component", () => {
     preventDefaultSpy.mockClear();
     fireEvent(priceInput, deleteEvent);
     expect(preventDefaultSpy).not.toHaveBeenCalled();
+  });
+
+  it("Should calls onSubmit handler on form submit", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+
+    const { getByPlaceholderText, getByTestId, getByText } =
+      renderWithQueryClient(<FormController {...props} />);
+
+    const nameProductInput = getByPlaceholderText("name");
+    fireEvent.change(nameProductInput, { target: { value: "Banana" } });
+
+    fireEvent.click(getByTestId("button-product"));
+
+    expect(getByText("Update")).toBeInTheDocument();
+  });
+
+  it("Should clears errors when changing input values", () => {
+    jest.spyOn(utils, "isEnableSubmitButton").mockReturnValue(true);
+    const mockedClearErrorOnChange =
+      utils.clearErrorOnChange as jest.MockedFunction<
+        typeof utils.clearErrorOnChange
+      >;
+
+    const { getByPlaceholderText } = renderWithQueryClient(
+      <FormController {...props} />
+    );
+
+    const fullNameInput = getByPlaceholderText("name");
+    fireEvent.change(fullNameInput, { target: { value: "banana" } });
+
+    expect(mockedClearErrorOnChange).toHaveBeenCalledWith(
+      "name",
+      {},
+      expect.any(Function)
+    );
   });
 });

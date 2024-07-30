@@ -1,5 +1,7 @@
 import { useAuthStore } from "@app/stores";
+import { Typography } from "@mui/material";
 import {
+  ErrorBoundary,
   HeadingContent,
   ListProductContent,
   TitleContent,
@@ -12,7 +14,13 @@ const Product = () => {
     <>
       <TitleContent name={user.fullName} />
       <HeadingContent />
-      <ListProductContent isAdmin={isAdmin} id={user.id} />
+      <ErrorBoundary
+        fallback={
+          <Typography>Oops! An error occurred in Product component.</Typography>
+        }
+      >
+        <ListProductContent isAdmin={isAdmin} id={user.id} />
+      </ErrorBoundary>
     </>
   );
 };

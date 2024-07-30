@@ -10,7 +10,6 @@ import { Selection } from "..";
 
 describe("Selection component", () => {
   const setSelectionValue = jest.fn() as Dispatch<SetStateAction<string>>;
-  const setTextSearch = jest.fn() as Dispatch<SetStateAction<string>>;
 
   it("Should render snapshot correctly", () => {
     expect(
@@ -18,7 +17,6 @@ describe("Selection component", () => {
         <Selection
           list={SORT_DATA_CUSTOMERS}
           setSelectionValue={setSelectionValue}
-          setTextSearch={setTextSearch}
         />
       )
     ).toMatchSnapshot();
@@ -29,7 +27,6 @@ describe("Selection component", () => {
       <Selection
         list={SORT_DATA_CUSTOMERS}
         setSelectionValue={setSelectionValue}
-        setTextSearch={setTextSearch}
       />
     );
 
@@ -40,7 +37,6 @@ describe("Selection component", () => {
     const newOption = getByText("Phone");
     fireEvent.click(newOption);
 
-    expect(setSelectionValue).toHaveBeenCalledWith("phone");
-    expect(setTextSearch).toHaveBeenCalledWith("");
+    expect(setSelectionValue).toHaveBeenCalledWith("phoneNumber");
   });
 });

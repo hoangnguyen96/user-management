@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, MouseEvent, useCallback, useEffect, useState } from "react";
 import {
   Box,
   Link,
@@ -95,7 +95,8 @@ const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
   const location = useLocation();
 
   const handleListItemClick = useCallback(
-    (value: string) => {
+    (e: MouseEvent<HTMLDivElement>, value: string) => {
+      e.preventDefault();
       onNavigate?.(value);
     },
     [onNavigate]
@@ -131,10 +132,11 @@ const NavigationBar = ({ onNavigate }: NavigationBarProps) => {
           key={`item-${key}`}
           sx={{ width: "100%", padding: 0 }}
           selected={currentStep === stepDetail.url}
-          onClick={() => handleListItemClick(stepDetail.url)}
+          onClick={(e) => handleListItemClick(e, stepDetail.url)}
         >
           <Link
             key={`item-${key}`}
+            href=""
             sx={{
               width: "100%",
               display: "flex",

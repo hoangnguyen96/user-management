@@ -24,12 +24,12 @@ export const typographyBase = {
   body2: {
     fontSize: "10px",
     fontWeight: 400,
-    color: " #838383",
+    color: " #595959",
   },
   subtitle2: {
     fontSize: "14px",
     fontWeight: 500,
-    color: " #acacac",
+    color: " #595959",
   },
   caption: {
     fontSize: "14px",

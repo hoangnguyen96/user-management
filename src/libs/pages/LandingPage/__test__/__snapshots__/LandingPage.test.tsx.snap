@@ -6,15 +6,15 @@ exports[`LandingPageBase component Should render snapshot correctly 1`] = `
   "baseElement": <body>
     <div>
       <div
-        class="MuiStack-root css-15yg4a4-MuiStack-root"
+        class="MuiStack-root css-iqlgev-MuiStack-root"
       >
         <h1
-          class="MuiTypography-root MuiTypography-h1 css-1qmco6e-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-h1 css-vitet8-MuiTypography-root"
         >
           Welcome!
         </h1>
         <p
-          class="MuiTypography-root MuiTypography-body1 css-1qmc7gr-MuiTypography-root"
+          class="MuiTypography-root MuiTypography-body1 css-1qh8mz2-MuiTypography-root"
         >
           This user management application
         </p>
@@ -22,7 +22,7 @@ exports[`LandingPageBase component Should render snapshot correctly 1`] = `
           class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-3eskvv-MuiDivider-root"
         />
         <div
-          class="MuiStack-root css-1cy7t4b-MuiStack-root"
+          class="MuiStack-root css-mgxetk-MuiStack-root"
         >
           <button
             class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1uu91vc-MuiButtonBase-root-MuiButton-root"
@@ -50,15 +50,15 @@ exports[`LandingPageBase component Should render snapshot correctly 1`] = `
   </body>,
   "container": <div>
     <div
-      class="MuiStack-root css-15yg4a4-MuiStack-root"
+      class="MuiStack-root css-iqlgev-MuiStack-root"
     >
       <h1
-        class="MuiTypography-root MuiTypography-h1 css-1qmco6e-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-h1 css-vitet8-MuiTypography-root"
       >
         Welcome!
       </h1>
       <p
-        class="MuiTypography-root MuiTypography-body1 css-1qmc7gr-MuiTypography-root"
+        class="MuiTypography-root MuiTypography-body1 css-1qh8mz2-MuiTypography-root"
       >
         This user management application
       </p>
@@ -66,7 +66,7 @@ exports[`LandingPageBase component Should render snapshot correctly 1`] = `
         class="MuiDivider-root MuiDivider-fullWidth MuiDivider-flexItem css-3eskvv-MuiDivider-root"
       />
       <div
-        class="MuiStack-root css-1cy7t4b-MuiStack-root"
+        class="MuiStack-root css-mgxetk-MuiStack-root"
       >
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-colorPrimary css-1uu91vc-MuiButtonBase-root-MuiButton-root"

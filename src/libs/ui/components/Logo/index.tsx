@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { memo, MouseEvent, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Avatar, Link, Typography, useMediaQuery } from "@mui/material";
 
@@ -19,9 +19,13 @@ const Logo = () => {
   // Auth
   const isAuthenticated = useAuthStore((state) => [state.isAuthenticated]);
 
-  const handleClickLogo = useCallback(() => {
-    navigate(isAuthenticated ? ROUTES.DASHBOARD : ROUTES.LANDING_PAGE);
-  }, [navigate, isAuthenticated]);
+  const handleClickLogo = useCallback(
+    (e: MouseEvent<HTMLAnchorElement>) => {
+      e.preventDefault();
+      navigate(isAuthenticated ? ROUTES.DASHBOARD : ROUTES.LANDING_PAGE);
+    },
+    [navigate, isAuthenticated]
+  );
 
   return (
     <Link
@@ -31,7 +35,8 @@ const Logo = () => {
       alignItems="center"
       justifyContent="center"
       gap="8px"
-      onClick={handleClickLogo}
+      href=""
+      onClick={(e) => handleClickLogo(e)}
     >
       <Avatar
         src={logo}
